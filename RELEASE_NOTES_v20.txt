@@ -1,7 +1,0 @@
-SnowRunner Craft Assistant v20 — Approved sidebar correction
-
-- Left navigation panel extends below Settings all the way to the lower border.
-- Tire-track artwork and mud splashes no longer appear in the left footer.
-- Legacy settings with tracks=true are handled safely; the seamless panel remains intact.
-- Same layout and controls as v19.
-- Verified under virtual display on Linux; Windows executable not independently tested.
