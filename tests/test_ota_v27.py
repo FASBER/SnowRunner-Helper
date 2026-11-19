@@ -149,7 +149,7 @@ class OTATests(unittest.TestCase):
 
     def test_pinned_key_and_https_must_be_set_for_production(self):
         import update_config
-        self.assertEqual(update_config.CURRENT_VERSION,'0.31.1')
+        self.assertEqual(update_config.CURRENT_VERSION,'0.31.2')
         self.assertEqual(update_config.RELEASE_MANIFEST_URL,'https://github.com/FASBER/SnowRunner-Helper/releases/latest/download/update.json')
         import os
         self.assertEqual(update_config.PUBLIC_KEY_ED25519_BASE64,os.getenv('OTA_ED25519_PUBLIC_BASE64',''))

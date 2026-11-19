@@ -1,11 +1,11 @@
-# SnowRunner Helper v0.31.0 — GitHub Actions (подготовлено, не опубликовано)
+# SnowRunner Helper v0.31.2 — GitHub Actions (исправленная Windows-сборка)
 
 Репозиторий: https://github.com/FASBER/SnowRunner-Helper
 
 Этот проект включает два файла:
 
 - `.github/workflows/checks.yml`: тесты Python при изменениях и pull requests; без доступа к ключу подписи.
-- `.github/workflows/release.yml`: при **теге `v0.31.0`** строит `SnowRunnerHelper.exe` на Windows, собирает Inno Setup, затем **в отдельном задании** подписывает `update.json` и создаёт обычный GitHub Release с EXE и манифестом.
+- `.github/workflows/release.yml`: при **теге `v0.31.2`** строит `SnowRunnerHelper.exe` на Windows, собирает Inno Setup, затем **в отдельном задании** подписывает `update.json` и создаёт обычный GitHub Release с EXE и манифестом.
 
 ## Шаги владельца (через сайт GitHub или Git)
 
@@ -20,8 +20,8 @@
    - Риски: этот секрет становится доступен доверенному release-workflow. Любой, кто может изменить release-workflow или запустить тег с вредоносным кодом, потенциально может извлечь его. Ограничьте доступ на запись, защитите release-теги и проверяйте изменения workflows. Если не хотите хранить приватный ключ на GitHub — используйте ручную публикацию из `release_tools/prepare_github_release.py` вместо автоматической.
 5. В Settings → Actions → General убедитесь, что GitHub Actions включены и что релизное задание получает разрешение `contents: write` через `permissions` в workflow (политики репозитория/организации могут ограничить его). **Не нужно выдавать ChatGPT право записи** для сборки на стороне GitHub.
 6. Сначала в Actions проверьте `Validate SnowRunner Helper`. Если тесты не прошли, не выпускайте версию.
-7. После проверки создайте и отправьте тег **`v0.31.0`** на ту же версию исходников (например, `git tag v0.31.0 && git push origin v0.31.0`). Публикация произойдёт только при наличии двух корректных значений ключей и успешной сборке.
-8. В GitHub → **Actions** проверьте два задания `build-windows` и `sign-and-release`. Затем откройте Releases и убедитесь в наличии `SnowRunnerHelper_Setup_v0.31.0.exe` и `update.json`.
+7. После проверки создайте и отправьте тег **`v0.31.2`** на ту же версию исходников (например, `git tag v0.31.2 && git push origin v0.31.2`). Публикация произойдёт только при наличии двух корректных значений ключей и успешной сборке.
+8. В GitHub → **Actions** проверьте два задания `build-windows` и `sign-and-release`. Затем откройте Releases и убедитесь в наличии `SnowRunnerHelper_Setup_v0.31.2.exe` и `update.json`.
 9. На настоящем Windows-компьютере проверьте выбор папки установки, запуск, обновление с более старой установленной версии и сохранность профилей. Установку **самой первой OTA-совместимой версии** пользователь должен выполнить вручную.
 
 ## Как выпускать следующие версии

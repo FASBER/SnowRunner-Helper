@@ -40,6 +40,12 @@ jobs:
       - name: Build Windows EXE
         shell: cmd
         run: call build_windows.bat
+      - name: Smoke-test frozen Windows EXE before publishing
+        shell: pwsh
+        run: |
+          $exe = (Resolve-Path 'dist/SnowRunnerHelper.exe').Path
+          $result = Start-Process -FilePath $exe -ArgumentList '--self-test' -Wait -PassThru
+          if ($result.ExitCode -ne 0) { throw "Frozen app cannot start or verify cryptography (exit $($result.ExitCode))" }
       - name: Install Inno Setup 6
         shell: pwsh
         run: |

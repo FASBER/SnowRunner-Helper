@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableExtensions
 cd /d "%~dp0"
-echo ===== SnowRunner Helper v0.31.1 Setup =====
+echo ===== SnowRunner Helper v0.31.2 Setup =====
 call build_windows.bat
 if errorlevel 1 goto error
 set "ISCC="
@@ -17,12 +17,12 @@ if not defined ISCC (
 echo Building native installer via %ISCC% ...
 "%ISCC%" "setup_snowrunner.iss"
 if errorlevel 1 goto error
-if not exist "installer_build\SnowRunnerHelper_Setup_v0.31.1.exe" (
+if not exist "installer_build\SnowRunnerHelper_Setup_v0.31.2.exe" (
   echo ERROR: Installer file not found
   goto error
 )
 echo.
-echo SUCCESS: installer_build\SnowRunnerHelper_Setup_v0.31.1.exe
+echo SUCCESS: installer_build\SnowRunnerHelper_Setup_v0.31.2.exe
 echo To verify: Install into a custom path, reopen, uninstall and verify profiles are retained.
 pause
 exit /b 0

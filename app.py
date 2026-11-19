@@ -1636,7 +1636,22 @@ class Application:
         self.render()
 
 
+def _self_test_frozen():
+    """Check signed-update primitives without a GUI or user-data changes."""
+    from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+    test_key = Ed25519PrivateKey.generate()
+    message = b'SnowRunner Helper frozen startup smoke test'
+    test_key.public_key().verify(test_key.sign(message), message)
+    if not (ROOT / 'catalog.json').is_file():
+        raise RuntimeError('Bundled cargo catalog is missing')
+    if not (ROOT / 'assets').is_dir():
+        raise RuntimeError('Bundled interface assets are missing')
+    return 0
+
+
 if __name__ == '__main__':
+    if sys.argv[1:] == ['--self-test']:
+        raise SystemExit(_self_test_frozen())
     root = tk.Tk()
     Application(root)
     root.mainloop()
