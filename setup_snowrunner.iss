@@ -3,7 +3,7 @@
 ; An approved SnowRunner-styled mock-up is a DESIGN REFERENCE. Inno Setup's
 ; native directory-selection dialog remains a Windows wizard, not a 1:1 mock-up.
 #define MyAppName "SnowRunner Helper"
-#define MyAppVersion "0.31.0"
+#define MyAppVersion "0.31.1"
 #define MyAppExeName "SnowRunnerHelper.exe"
 
 [Setup]
@@ -11,7 +11,7 @@
 AppId=SnowRunnerCraftAssistant.CommunityEdition
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppVerName={#MyAppName} v0.31.0
+AppVerName={#MyAppName} v0.31.1
 AppPublisher=SnowRunner Helper Community Project
 DefaultDirName={localappdata}\Programs\SnowRunner Helper
 UsePreviousAppDir=yes
@@ -24,7 +24,7 @@ WizardStyle=modern
 WizardImageFile=installer_assets\wizard_side.bmp
 WizardSmallImageFile=installer_assets\wizard_small.bmp
 OutputDir=installer_build
-OutputBaseFilename=SnowRunnerHelper_Setup_v0.31.0
+OutputBaseFilename=SnowRunnerHelper_Setup_v0.31.1
 SetupIconFile=app_icon.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
 Compression=lzma2

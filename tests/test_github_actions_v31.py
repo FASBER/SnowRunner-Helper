@@ -71,7 +71,7 @@ class GitHubActionsChecks(unittest.TestCase):
             release=verify_manifest(manifest.read_bytes(),public)
             self.assertEqual(release.url,'https://github.com/FASBER/SnowRunner-Helper/releases/download/v0.31.0/SnowRunnerHelper_Setup_v0.31.0.exe')
             self.assertEqual(release.version,'0.31.0')
-            self.assertNotIn('PRIVATE KEY',manifest.read_text())
+            self.assertNotIn('PRIVATE KEY',manifest.read_text(encoding='utf-8'))
 
     def test_no_secret_in_existing_files(self):
         import os

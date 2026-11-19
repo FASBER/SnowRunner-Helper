@@ -17,6 +17,7 @@ jobs:
     runs-on: windows-2022
     env:
       OTA_ED25519_PUBLIC_BASE64: ${{ vars.OTA_ED25519_PUBLIC_BASE64 }}
+      PYTHONUTF8: '1'
     timeout-minutes: 50
     permissions:
       contents: read
