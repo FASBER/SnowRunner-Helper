@@ -1,0 +1,96 @@
+name: Build and release SnowRunner Helper
+# WARNING: publish requires a protected vX.Y.Z tag, maintainer-managed
+# OTA_ED25519_PRIVATE_PEM secret and OTA_ED25519_PUBLIC_BASE64 repo variable.
+# No PR trigger: never allow untrusted contributions to access signing secrets.
+on:
+  push:
+    tags:
+      - 'v[0-9]*.[0-9]*.[0-9]*'
+permissions:
+  contents: read
+concurrency:
+  group: snowrunner-release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build-windows:
+    if: github.repository == 'FASBER/SnowRunner-Helper'
+    runs-on: windows-2022
+    env:
+      OTA_ED25519_PUBLIC_BASE64: ${{ vars.OTA_ED25519_PUBLIC_BASE64 }}
+    timeout-minutes: 50
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Validate tag and embed approved OTA public key
+        shell: pwsh
+        env:
+          OTA_ED25519_PUBLIC_BASE64: ${{ vars.OTA_ED25519_PUBLIC_BASE64 }}
+        run: |
+          python release_tools/gha_release_helper.py prepare --tag '${{ github.ref_name }}'
+          if ($LASTEXITCODE -ne 0) { throw 'Invalid version or missing/invalid OTA public key' }
+      - name: Run tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Build Windows EXE
+        shell: cmd
+        run: call build_windows.bat
+      - name: Install Inno Setup 6
+        shell: pwsh
+        run: |
+          choco install innosetup --yes --no-progress
+          if ($LASTEXITCODE -ne 0) { throw 'Inno Setup installation failed' }
+      - name: Build Windows installer
+        shell: pwsh
+        run: |
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path $iscc)) { throw "Missing ISCC.exe: $iscc" }
+          & $iscc setup_snowrunner.iss
+          if ($LASTEXITCODE -ne 0) { throw 'Inno Setup compilation failed' }
+          $version = (Get-Content version.json -Raw | ConvertFrom-Json).version
+          $expected = "installer_build/SnowRunnerHelper_Setup_v$version.exe"
+          if (-not (Test-Path $expected)) { throw "Expected installer not found: $expected" }
+      - name: Upload installer for signing
+        uses: actions/upload-artifact@v4
+        with:
+          name: snowrunner-windows-installer
+          path: installer_build/SnowRunnerHelper_Setup_v*.exe
+          if-no-files-found: error
+          retention-days: 7
+  sign-and-release:
+    needs: build-windows
+    if: github.repository == 'FASBER/SnowRunner-Helper'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install signing dependencies
+        run: python -m pip install 'cryptography>=43.0'
+      - uses: actions/download-artifact@v4
+        with:
+          name: snowrunner-windows-installer
+          path: installer_build
+      - name: Sign update.json and verify installer
+        env:
+          OTA_ED25519_PRIVATE_PEM: ${{ secrets.OTA_ED25519_PRIVATE_PEM }}
+          OTA_ED25519_PUBLIC_BASE64: ${{ vars.OTA_ED25519_PUBLIC_BASE64 }}
+        run: python release_tools/gha_release_helper.py sign --tag "${GITHUB_REF_NAME}" --output update.json
+      - name: Publish stable GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          EXE="installer_build/SnowRunnerHelper_Setup_v${VERSION}.exe"
+          test -s "$EXE"
+          test -s update.json
+          gh release create "$GITHUB_REF_NAME" "$EXE" update.json \
+            --verify-tag --title "SnowRunner Helper $GITHUB_REF_NAME" --generate-notes --latest

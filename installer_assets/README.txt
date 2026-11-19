@@ -1,0 +1,1 @@
+The approved design reference is INSTALLER_DESIGN_REFERENCE.png. The actual compiled Inno Setup wizard uses Windows-native controls and these branding BMPs, and is not pixel-identical to the reference.
