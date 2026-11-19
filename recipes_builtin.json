@@ -1,0 +1,3185 @@
+{
+  "checked": "2026-11-19",
+  "status": "extracted_from_user_installed_game_cache_block",
+  "regions": {
+    "yukon": {
+      "ru": "Юкон",
+      "en": "Yukon"
+    },
+    "amur": {
+      "ru": "Амур",
+      "en": "Amur"
+    },
+    "ontario": {
+      "ru": "Онтарио",
+      "en": "Ontario"
+    },
+    "wisconsin": {
+      "ru": "Висконсин",
+      "en": "Wisconsin"
+    },
+    "scandinavia": {
+      "ru": "Скандинавия",
+      "en": "Scandinavia"
+    },
+    "north_carolina": {
+      "ru": "Северная Каролина",
+      "en": "North Carolina"
+    },
+    "zurdania": {
+      "ru": "Зурдания",
+      "en": "Zurdania"
+    },
+    "user_chart": {
+      "ru": "Схема пользователя (регион не указан)",
+      "en": "User chart (no region specified)"
+    },
+    "game_files": {
+      "ru": "Из игровых файлов",
+      "en": "Game files"
+    },
+    "custom": {
+      "ru": "Мои рецепты",
+      "en": "My recipes"
+    },
+    "level_ru_04_01": {
+      "ru": "Амур → Река Урска",
+      "en": "Amur → Urska River"
+    },
+    "level_ru_04_04": {
+      "ru": "Амур → Чернокаменск",
+      "en": "Amur → Chernokamensk"
+    },
+    "level_ru_05_02": {
+      "ru": "Дон → Антоновский заповедник",
+      "en": "Don → Antonovskiy Nature Reserve"
+    },
+    "level_ru_08_03": {
+      "ru": "Белозерские Пашни → Основной район",
+      "en": "Belozersk Glades → The Heartlands"
+    },
+    "level_ru_13_01": {
+      "ru": "Алматинская область → Жербайские Карьеры",
+      "en": "Almaty Region → Zherbai Quarries"
+    },
+    "level_ru_17_02": {
+      "ru": "Зурдания → Долина обвалов",
+      "en": "Zurdania → Valley of Falling Rocks"
+    },
+    "level_us_03_01": {
+      "ru": "Висконсин → Блэк Бэджер Лейк",
+      "en": "Wisconsin → Black Badger Lake"
+    },
+    "level_us_03_02": {
+      "ru": "Висконсин → Река Грэйнвудс",
+      "en": "Wisconsin → Grainwoods River"
+    },
+    "level_us_04_01": {
+      "ru": "Юкон → Подтопленные Предгорья",
+      "en": "Yukon → Flooded Foothills"
+    },
+    "level_us_04_02": {
+      "ru": "Юкон → Пик Биг-Салмон",
+      "en": "Yukon → Big Salmon Peak"
+    },
+    "level_us_06_01": {
+      "ru": "Мэн → Низина",
+      "en": "Maine → The Lowland"
+    },
+    "level_us_06_02": {
+      "ru": "Мэн → Национальный парк Йеллоурок",
+      "en": "Maine → Yellowrock National Park"
+    },
+    "level_us_07_01": {
+      "ru": "Теннесси → Горящая мельница",
+      "en": "Tennessee → Burning Mill"
+    },
+    "level_us_09_01": {
+      "ru": "Онтарио → Река Олбани",
+      "en": "Ontario → The Albany River"
+    },
+    "level_us_11_01": {
+      "ru": "Британская Колумбия → Дункан Бэй",
+      "en": "British Columbia → Duncan Bay"
+    },
+    "level_us_11_02": {
+      "ru": "Британская Колумбия → Национальный парк Норт-Пик",
+      "en": "British Columbia → North Peak National Park"
+    },
+    "level_us_12_01": {
+      "ru": "Северная Каролина → Залив Пайнлайн",
+      "en": "North Carolina → Pineline Bay"
+    },
+    "level_us_12_04": {
+      "ru": "Северная Каролина → Овиро Хиллз",
+      "en": "North Carolina → Oviro Hills"
+    },
+    "level_us_15_01": {
+      "ru": "Квебек → Гавань",
+      "en": "Quebec → Harbor"
+    },
+    "level_us_16_02": {
+      "ru": "Вашингтон → Нац. парк Селтен Ривер",
+      "en": "Washington → Selten River State Park"
+    },
+    "level_us_16_03": {
+      "ru": "Вашингтон → Горы Селтен Ривер",
+      "en": "Washington → Selten River Mountains"
+    },
+    "level_us_18_01": {
+      "ru": "Чиапас → Коста Атардесер",
+      "en": "Chiapas → Costa Atardecer"
+    },
+    "level_us_18_02": {
+      "ru": "Чиапас → Сьерра Фуэрте",
+      "en": "Chiapas → Sierra Fuerte"
+    }
+  },
+  "recipes": [
+    {
+      "id": "cache-3b197b74f3a065d9d1",
+      "region": "level_ru_04_01",
+      "map": "level_ru_04_01",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {
+        "metal_rolls": 2
+      },
+      "outputs": {
+        "metal_beams": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_01_CRAFT_METAL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": [
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-f2d65d86731b4eae3b",
+      "region": "level_ru_04_04",
+      "map": "level_ru_04_04",
+      "name": {
+        "ru": "Средние трубы",
+        "en": "Medium Pipes"
+      },
+      "inputs": {
+        "small_pipes": 1,
+        "metal_rolls": 2
+      },
+      "outputs": {
+        "medium_pipes": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_04_CRAFT_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoPipesMedium",
+        "inputs": [
+          "CargoPipesSmall",
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-369c302cbc416d53a4",
+      "region": "level_ru_04_04",
+      "map": "level_ru_04_04",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {
+        "medium_pipes": 2,
+        "metal_rolls": 2
+      },
+      "outputs": {
+        "metal_beams": 3
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_04_CRAFT_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": [
+          "CargoPipesMedium",
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-1b9124984b04e5fab7",
+      "region": "level_ru_04_04",
+      "map": "level_ru_04_04",
+      "name": {
+        "ru": "Кирпичи",
+        "en": "Bricks"
+      },
+      "inputs": {
+        "cement": 1,
+        "packaged_sand": 1
+      },
+      "outputs": {
+        "bricks": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_04_CRAFT_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoBricks",
+        "inputs": [
+          "CargoBags",
+          "CargoBags2"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-2ab0c19a8c2f62d6e8",
+      "region": "level_ru_05_02",
+      "map": "level_ru_05_02",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_05_02_CONTRYSIDE_03",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-21e98d4071cf24a38b",
+      "region": "level_ru_05_02",
+      "map": "level_ru_05_02",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "long_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_05_02_CONTRYSIDE_03",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsLong"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-1f51c2e88e57da33a8",
+      "region": "level_ru_05_02",
+      "map": "level_ru_05_02",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "short_logs": 2
+      },
+      "outputs": {
+        "wooden_planks": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_05_02_CONTRYSIDE_03",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsShort"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-885f02711f07ae21aa",
+      "region": "level_ru_08_03",
+      "map": "level_ru_08_03",
+      "name": {
+        "ru": "Средние трубы",
+        "en": "Medium Pipes"
+      },
+      "inputs": {},
+      "outputs": {
+        "medium_pipes": 1
+      },
+      "generator": true,
+      "energy": 150,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_08_03_CRAFT_ZONE",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoPipesMedium",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-c58bb1433ade0aa0d8",
+      "region": "level_ru_08_03",
+      "map": "level_ru_08_03",
+      "name": {
+        "ru": "Бытовка",
+        "en": "Cabin"
+      },
+      "inputs": {
+        "cargo_container": 1,
+        "consumables": 1
+      },
+      "outputs": {
+        "cabin": 1
+      },
+      "generator": true,
+      "energy": 250,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_08_03_CRAFT_ZONE",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoForkliftCaravanContainer2",
+        "inputs": [
+          "CargoContainerSmall",
+          "CargoCrateLarge"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-5532e54c688671b0dd",
+      "region": "level_ru_08_03",
+      "map": "level_ru_08_03",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {},
+      "outputs": {
+        "metal_beams": 1
+      },
+      "generator": true,
+      "energy": 150,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_08_03_CRAFT_ZONE",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-6cd1c2c1a9bb38bb05",
+      "region": "level_ru_08_03",
+      "map": "level_ru_08_03",
+      "name": {
+        "ru": "Рулоны металла",
+        "en": "Metal Rolls"
+      },
+      "inputs": {},
+      "outputs": {
+        "metal_rolls": 1
+      },
+      "generator": true,
+      "energy": 250,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_08_03_CRAFT_ZONE",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoMetalRoll",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-c7fc8b5399c3039eef",
+      "region": "level_ru_13_01",
+      "map": "level_ru_13_01",
+      "name": {
+        "ru": "Бетонные блоки",
+        "en": "Concrete Blocks"
+      },
+      "inputs": {
+        "concrete_slab": 1
+      },
+      "outputs": {
+        "concrete_blocks": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_13_01_CRAFT_BLOCKS",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoConcreteBlocks",
+        "inputs": [
+          "CargoConcreteSlab"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-b429f7c4188372c503",
+      "region": "level_ru_17_02",
+      "map": "level_ru_17_02",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "short_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_17_02_SAWMILL_STORAGE",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsShort"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-294e1b413af59954de",
+      "region": "level_ru_17_02",
+      "map": "level_ru_17_02",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_17_02_SAWMILL_STORAGE",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-93c01a166b55500f9e",
+      "region": "level_ru_17_02",
+      "map": "level_ru_17_02",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "long_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 3
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_17_02_SAWMILL_STORAGE",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsLong"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-31d9f3615e783b7237",
+      "region": "level_ru_17_02",
+      "map": "level_ru_17_02",
+      "name": {
+        "ru": "Деревянные доски (тип 2)",
+        "en": "Wooden Planks (type 2)"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks_type2": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_17_02_SAWMILL_STORAGE",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks2",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-78c0e8579ed78de6d4",
+      "region": "level_ru_17_02",
+      "map": "level_ru_17_02",
+      "name": {
+        "ru": "Деревянные доски (тип 2)",
+        "en": "Wooden Planks (type 2)"
+      },
+      "inputs": {
+        "long_logs": 1
+      },
+      "outputs": {
+        "wooden_planks_type2": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_17_02_SAWMILL_STORAGE",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks2",
+        "inputs": [
+          "CargoLogsLong"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-04f5b351742f3fb46e",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_LUMBER_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-79b788ce5aa0008681",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "long_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 4
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_LUMBER_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsLong"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-6d69303eb3664f1131",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Цемент",
+        "en": "Cement"
+      },
+      "inputs": {},
+      "outputs": {
+        "cement": 1
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_GEN_01_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoBags",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-d8aba05810f0deb563",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Бетонные блоки",
+        "en": "Concrete Blocks"
+      },
+      "inputs": {},
+      "outputs": {
+        "concrete_blocks": 1
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_GEN_01_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoConcreteBlocks",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-369ac0bb0c34c15b7d",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Бетонная плита",
+        "en": "Concrete Slab"
+      },
+      "inputs": {},
+      "outputs": {
+        "concrete_slab": 1
+      },
+      "generator": true,
+      "energy": 150,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_GEN_01_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoConcreteSlab",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-f27c58345f9ad4a428",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Расходные материалы",
+        "en": "Consumables"
+      },
+      "inputs": {},
+      "outputs": {
+        "consumables": 1
+      },
+      "generator": true,
+      "energy": 150,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_GEN_01_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoCrateLarge",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-546481eed14e4b7b0a",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {},
+      "outputs": {
+        "metal_beams": 1
+      },
+      "generator": true,
+      "energy": 150,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_GEN_01_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-593d14f0d3f2b44ead",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Упакованный песок",
+        "en": "Packaged Sand"
+      },
+      "inputs": {},
+      "outputs": {
+        "packaged_sand": 1
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_GEN_02_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoBags2",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-c0f75c229934b5b839",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Бочки с нефтью",
+        "en": "Oil Barrels"
+      },
+      "inputs": {},
+      "outputs": {
+        "oil_barrels": 1
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_GEN_03_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoBarrels",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-de3be9855032dfe418",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Малые трубы",
+        "en": "Small Pipes"
+      },
+      "inputs": {},
+      "outputs": {
+        "small_pipes": 1
+      },
+      "generator": true,
+      "energy": 150,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_GEN_03_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoPipesSmall",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-0ac20c7ea061b80032",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Средние трубы",
+        "en": "Medium Pipes"
+      },
+      "inputs": {},
+      "outputs": {
+        "medium_pipes": 1
+      },
+      "generator": true,
+      "energy": 150,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_GEN_03_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoPipesMedium",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-242ca5c014f44c4a69",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Большая труба",
+        "en": "Large Pipe"
+      },
+      "inputs": {},
+      "outputs": {
+        "large_pipe": 1
+      },
+      "generator": true,
+      "energy": 200,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_GEN_03_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoPipeLarge",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-fe1d0b07442a61fbcc",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Грузовой контейнер",
+        "en": "Cargo Container"
+      },
+      "inputs": {},
+      "outputs": {
+        "cargo_container": 1
+      },
+      "generator": true,
+      "energy": 150,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_GEN_03_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoContainerSmall",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-fc9496e46531d345a6",
+      "region": "level_us_03_02",
+      "map": "level_us_03_02",
+      "name": {
+        "ru": "Рельсовая секция",
+        "en": "Rail Section"
+      },
+      "inputs": {
+        "metal_beams": 2,
+        "wooden_planks": 4
+      },
+      "outputs": {
+        "rail_section": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_02_RAIL_FACTORY",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoRailway",
+        "inputs": [
+          "CargoMetalPlanks",
+          "CargoWoodenPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-2f6b1e4d5c4b72d7b6",
+      "region": "level_us_03_02",
+      "map": "level_us_03_02",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_02_SAWMILL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-8b734d291ecbe9a1ef",
+      "region": "level_us_03_02",
+      "map": "level_us_03_02",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "long_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 4
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_02_SAWMILL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsLong"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-256b61355aa04626e4",
+      "region": "level_us_03_02",
+      "map": "level_us_03_02",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {
+        "metal_rolls": 2
+      },
+      "outputs": {
+        "metal_beams": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_02_STEEL_FACTORY",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": [
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-fd5cb281242d8c52b2",
+      "region": "level_us_04_01",
+      "map": "level_us_04_01",
+      "name": {
+        "ru": "Бытовка",
+        "en": "Cabin"
+      },
+      "inputs": {
+        "cargo_container": 1,
+        "wooden_planks": 2
+      },
+      "outputs": {
+        "cabin": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_01_CRAFT_01_C",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoForkliftCaravanContainer2",
+        "inputs": [
+          "CargoContainerSmall",
+          "CargoWoodenPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-fae2f5a35fe4c97b9e",
+      "region": "level_us_04_01",
+      "map": "level_us_04_01",
+      "name": {
+        "ru": "Рулоны металла",
+        "en": "Metal Rolls"
+      },
+      "inputs": {
+        "metal_beams": 1
+      },
+      "outputs": {
+        "metal_rolls": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_01_CRAFT_02_C",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalRoll",
+        "inputs": [
+          "CargoMetalPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-a7ecd44c939acf6ad0",
+      "region": "level_us_04_01",
+      "map": "level_us_04_01",
+      "name": {
+        "ru": "Бетонные блоки",
+        "en": "Concrete Blocks"
+      },
+      "inputs": {
+        "cement": 1
+      },
+      "outputs": {
+        "concrete_blocks": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_01_CRAFT_03_C",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoConcreteBlocks",
+        "inputs": [
+          "CargoBags"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-0751d5cf727f959d4b",
+      "region": "level_us_04_01",
+      "map": "level_us_04_01",
+      "name": {
+        "ru": "Бетонная плита",
+        "en": "Concrete Slab"
+      },
+      "inputs": {
+        "cement": 2
+      },
+      "outputs": {
+        "concrete_slab": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_01_CRAFT_03_C",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoConcreteSlab",
+        "inputs": [
+          "CargoBags"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-b167b19c06dda4b539",
+      "region": "level_us_04_02",
+      "map": "level_us_04_02",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {
+        "metal_rolls": 2
+      },
+      "outputs": {
+        "metal_beams": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_02_CRAFT_METAL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": [
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-3fb08d57dd68bd322c",
+      "region": "level_us_04_02",
+      "map": "level_us_04_02",
+      "name": {
+        "ru": "Малые трубы",
+        "en": "Small Pipes"
+      },
+      "inputs": {
+        "metal_rolls": 1
+      },
+      "outputs": {
+        "small_pipes": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_02_CRAFT_METAL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoPipesSmall",
+        "inputs": [
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-84183baa3e1e146e95",
+      "region": "level_us_04_02",
+      "map": "level_us_04_02",
+      "name": {
+        "ru": "Средние трубы",
+        "en": "Medium Pipes"
+      },
+      "inputs": {
+        "metal_rolls": 2
+      },
+      "outputs": {
+        "medium_pipes": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_02_CRAFT_METAL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoPipesMedium",
+        "inputs": [
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-379e30cbf03b672c82",
+      "region": "level_us_04_02",
+      "map": "level_us_04_02",
+      "name": {
+        "ru": "Большая труба",
+        "en": "Large Pipe"
+      },
+      "inputs": {
+        "metal_rolls": 4
+      },
+      "outputs": {
+        "large_pipe": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_02_CRAFT_METAL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoPipeLarge",
+        "inputs": [
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-eeb20f672c4bc7e471",
+      "region": "level_us_04_02",
+      "map": "level_us_04_02",
+      "name": {
+        "ru": "Грузовой контейнер",
+        "en": "Cargo Container"
+      },
+      "inputs": {
+        "metal_rolls": 2
+      },
+      "outputs": {
+        "cargo_container": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_02_CRAFT_METAL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoContainerSmall",
+        "inputs": [
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-3dd4f78ec7445f456c",
+      "region": "level_us_04_02",
+      "map": "level_us_04_02",
+      "name": {
+        "ru": "Бетонная плита",
+        "en": "Concrete Slab"
+      },
+      "inputs": {
+        "cement": 2
+      },
+      "outputs": {
+        "concrete_slab": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_02_CRAFT_CONCRETE",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoConcreteSlab",
+        "inputs": [
+          "CargoBags"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-9d799ca4e0670716a7",
+      "region": "level_us_04_02",
+      "map": "level_us_04_02",
+      "name": {
+        "ru": "Бетонные блоки",
+        "en": "Concrete Blocks"
+      },
+      "inputs": {
+        "cement": 1
+      },
+      "outputs": {
+        "concrete_blocks": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_02_CRAFT_CONCRETE",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoConcreteBlocks",
+        "inputs": [
+          "CargoBags"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-6a10121bf2c35c10c7",
+      "region": "level_us_04_02",
+      "map": "level_us_04_02",
+      "name": {
+        "ru": "Бытовка",
+        "en": "Cabin"
+      },
+      "inputs": {
+        "cargo_container": 1,
+        "wooden_planks": 2
+      },
+      "outputs": {
+        "cabin": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_04_02_CRAFT_HOUSE",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoForkliftCaravanContainer2",
+        "inputs": [
+          "CargoContainerSmall",
+          "CargoWoodenPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-fcc30e0f57023ee4e1",
+      "region": "level_us_06_01",
+      "map": "level_us_06_01",
+      "name": {
+        "ru": "Бытовка",
+        "en": "Cabin"
+      },
+      "inputs": {
+        "cargo_container": 1,
+        "wooden_planks": 2
+      },
+      "outputs": {
+        "cabin": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_06_01_CRAFT_MAIN",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoForkliftCaravanContainer2",
+        "inputs": [
+          "CargoContainerSmall",
+          "CargoWoodenPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-e06b2ee2c65725d89b",
+      "region": "level_us_06_02",
+      "map": "level_us_06_02",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {
+        "metal_rolls": 2
+      },
+      "outputs": {
+        "metal_beams": 1
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_06_02_METAL_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": [
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-ad3505889921f686a5",
+      "region": "level_us_06_02",
+      "map": "level_us_06_02",
+      "name": {
+        "ru": "Рулоны металла",
+        "en": "Metal Rolls"
+      },
+      "inputs": {
+        "metal_beams": 1
+      },
+      "outputs": {
+        "metal_rolls": 2
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_06_02_METAL_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalRoll",
+        "inputs": [
+          "CargoMetalPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-a4a76f716aff15ab96",
+      "region": "level_us_06_02",
+      "map": "level_us_06_02",
+      "name": {
+        "ru": "Бетонная плита",
+        "en": "Concrete Slab"
+      },
+      "inputs": {
+        "cement": 2
+      },
+      "outputs": {
+        "concrete_slab": 1
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_06_02_CONCRETE_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoConcreteSlab",
+        "inputs": [
+          "CargoBags"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-a9122cac0344073a73",
+      "region": "level_us_06_02",
+      "map": "level_us_06_02",
+      "name": {
+        "ru": "Бетонные блоки",
+        "en": "Concrete Blocks"
+      },
+      "inputs": {
+        "cement": 1
+      },
+      "outputs": {
+        "concrete_blocks": 1
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_06_02_CONCRETE_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoConcreteBlocks",
+        "inputs": [
+          "CargoBags"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-d1dfd55624fc185eef",
+      "region": "level_us_09_01",
+      "map": "level_us_09_01",
+      "name": {
+        "ru": "Бытовка",
+        "en": "Cabin"
+      },
+      "inputs": {
+        "metal_beams": 1,
+        "wooden_planks_type2": 1
+      },
+      "outputs": {
+        "cabin": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_09_01_FACTORY_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoForkliftCaravanContainer2",
+        "inputs": [
+          "CargoMetalPlanks",
+          "CargoWoodenPlanks2"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-bf2913b412542c254b",
+      "region": "level_us_09_01",
+      "map": "level_us_09_01",
+      "name": {
+        "ru": "Расходные материалы",
+        "en": "Consumables"
+      },
+      "inputs": {
+        "metal_beams": 1,
+        "metal_rolls": 1,
+        "wooden_planks_type4": 1
+      },
+      "outputs": {
+        "consumables": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_09_01_FACTORY_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoCrateLarge",
+        "inputs": [
+          "CargoMetalPlanks",
+          "CargoMetalRoll",
+          "CargoWoodenPlanks4"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-21b5f4a9a6020d5d0e",
+      "region": "level_us_11_01",
+      "map": "level_us_11_01",
+      "name": {
+        "ru": "Бытовка",
+        "en": "Cabin"
+      },
+      "inputs": {
+        "metal_rolls": 2,
+        "wooden_planks": 1
+      },
+      "outputs": {
+        "cabin": 1
+      },
+      "generator": true,
+      "energy": 50,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_11_01_CRAFT_01",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoForkliftCaravanContainer2",
+        "inputs": [
+          "CargoMetalRoll",
+          "CargoWoodenPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-24348581f35fcdaad2",
+      "region": "level_us_11_01",
+      "map": "level_us_11_01",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "short_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 2
+      },
+      "generator": true,
+      "energy": 30,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_11_01_CRAFT_01",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsShort"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-4b2b07c5844a876cea",
+      "region": "level_us_11_01",
+      "map": "level_us_11_01",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {},
+      "outputs": {
+        "metal_beams": 1
+      },
+      "generator": true,
+      "energy": 30,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_11_01_CRAFT_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-de3da0e68c34dbd7c3",
+      "region": "level_us_11_01",
+      "map": "level_us_11_01",
+      "name": {
+        "ru": "Рулоны металла",
+        "en": "Metal Rolls"
+      },
+      "inputs": {
+        "metal_beams": 1
+      },
+      "outputs": {
+        "metal_rolls": 2
+      },
+      "generator": true,
+      "energy": 20,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_11_01_CRAFT_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalRoll",
+        "inputs": [
+          "CargoMetalPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-41316784b2dcfa118d",
+      "region": "level_us_11_01",
+      "map": "level_us_11_01",
+      "name": {
+        "ru": "Расходные материалы",
+        "en": "Consumables"
+      },
+      "inputs": {},
+      "outputs": {
+        "consumables": 1
+      },
+      "generator": true,
+      "energy": 30,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_11_01_CRAFT_02",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoCrateLarge",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-e6b1c6b2c09063481e",
+      "region": "level_us_11_02",
+      "map": "level_us_11_02",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_11_02_LOG_CRAFT_01",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-faec7547bb0872bbd3",
+      "region": "level_us_11_02",
+      "map": "level_us_11_02",
+      "name": {
+        "ru": "Деревянные доски (тип 2)",
+        "en": "Wooden Planks (type 2)"
+      },
+      "inputs": {
+        "long_logs": 1
+      },
+      "outputs": {
+        "wooden_planks_type2": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_11_02_LOG_CRAFT_01",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks2",
+        "inputs": [
+          "CargoLogsLong"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-b60d43a297146abd1e",
+      "region": "level_us_11_02",
+      "map": "level_us_11_02",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_11_02_LOG_CRAFT_03",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-e3718e2806e2bb03e1",
+      "region": "level_us_11_02",
+      "map": "level_us_11_02",
+      "name": {
+        "ru": "Деревянные доски (тип 2)",
+        "en": "Wooden Planks (type 2)"
+      },
+      "inputs": {
+        "long_logs": 1
+      },
+      "outputs": {
+        "wooden_planks_type2": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_11_02_LOG_CRAFT_03",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks2",
+        "inputs": [
+          "CargoLogsLong"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-e02fadd1419ca84256",
+      "region": "level_us_12_01",
+      "map": "level_us_12_01",
+      "name": {
+        "ru": "Рулоны металла",
+        "en": "Metal Rolls"
+      },
+      "inputs": {},
+      "outputs": {
+        "metal_rolls": 2
+      },
+      "generator": true,
+      "energy": 50,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_12_01_GEN_METAL_FACTORY",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalRoll",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-3b4965f9d0a62d7add",
+      "region": "level_us_12_01",
+      "map": "level_us_12_01",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {},
+      "outputs": {
+        "metal_beams": 1
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_12_01_GEN_METAL_FACTORY",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-5f784f5e36661ab918",
+      "region": "level_us_12_01",
+      "map": "level_us_12_01",
+      "name": {
+        "ru": "Цемент",
+        "en": "Cement"
+      },
+      "inputs": {},
+      "outputs": {
+        "cement": 2
+      },
+      "generator": true,
+      "energy": 70,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_12_01_GEN_CONCRETE_FACTORY",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoBags",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-fb7fc3ad29887ac96b",
+      "region": "level_us_12_01",
+      "map": "level_us_12_01",
+      "name": {
+        "ru": "Бетонная плита",
+        "en": "Concrete Slab"
+      },
+      "inputs": {},
+      "outputs": {
+        "concrete_slab": 1
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_12_01_GEN_CONCRETE_FACTORY",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoConcreteSlab",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-2094f2aafb15d5ad5e",
+      "region": "level_us_12_01",
+      "map": "level_us_12_01",
+      "name": {
+        "ru": "Бытовка",
+        "en": "Cabin"
+      },
+      "inputs": {},
+      "outputs": {
+        "cabin": 1
+      },
+      "generator": true,
+      "energy": 150,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_12_01_GEN_FACTORY_CABINS",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoForkliftCaravanContainer2",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-d13dd25a88f8344d6e",
+      "region": "level_us_12_04",
+      "map": "level_us_12_04",
+      "name": {
+        "ru": "Бытовка",
+        "en": "Cabin"
+      },
+      "inputs": {
+        "metal_rolls": 2,
+        "wooden_planks": 1
+      },
+      "outputs": {
+        "cabin": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_12_04_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoForkliftCaravanContainer2",
+        "inputs": [
+          "CargoMetalRoll",
+          "CargoWoodenPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-e8d3cde0b2cbca88e1",
+      "region": "level_us_15_01",
+      "map": "level_us_15_01",
+      "name": {
+        "ru": "Водопроводная труба",
+        "en": "Water Pipe"
+      },
+      "inputs": {
+        "metal_rolls": 2
+      },
+      "outputs": {
+        "water_pipe": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_15_01_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWaterPipe",
+        "inputs": [
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-4cb385796351aa15b6",
+      "region": "level_us_15_01",
+      "map": "level_us_15_01",
+      "name": {
+        "ru": "Средние трубы",
+        "en": "Medium Pipes"
+      },
+      "inputs": {
+        "metal_rolls": 3
+      },
+      "outputs": {
+        "medium_pipes": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_15_01_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoPipesMedium",
+        "inputs": [
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-7980b3c0ff35d951a2",
+      "region": "level_us_15_01",
+      "map": "level_us_15_01",
+      "name": {
+        "ru": "Малые трубы",
+        "en": "Small Pipes"
+      },
+      "inputs": {
+        "metal_rolls": 1
+      },
+      "outputs": {
+        "small_pipes": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_15_01_CRAFT",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoPipesSmall",
+        "inputs": [
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-bf208515b40d16544a",
+      "region": "level_us_15_01",
+      "map": "level_us_15_01",
+      "name": {
+        "ru": "Деревянные доски (тип 2)",
+        "en": "Wooden Planks (type 2)"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks_type2": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_15_01_SAWMILL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks2",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-a1c704155370ba9bae",
+      "region": "level_us_15_01",
+      "map": "level_us_15_01",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "short_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_15_01_SAWMILL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsShort"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-fadf6e8d8df553e954",
+      "region": "level_us_16_02",
+      "map": "level_us_16_02",
+      "name": {
+        "ru": "Рельсовая секция",
+        "en": "Rail Section"
+      },
+      "inputs": {
+        "metal_beams": 1,
+        "wooden_planks": 2
+      },
+      "outputs": {
+        "rail_section": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_16_02_RAIL_WAREHOUSE_01",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoRailway",
+        "inputs": [
+          "CargoMetalPlanks",
+          "CargoWoodenPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-595de3beec5c44407a",
+      "region": "level_us_18_01",
+      "map": "level_us_18_01",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 3
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_18_01_SAWMILL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-35cf450ec4bddaf786",
+      "region": "level_us_18_01",
+      "map": "level_us_18_01",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "long_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 5
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов.",
+        "en": "Recipe from game files."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_18_01_SAWMILL",
+      "unlock_condition": "base_zone",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsLong"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-0dfe50ee17fffa81eb",
+      "region": "level_ru_04_01",
+      "map": "level_ru_04_01",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_01_SAWMILL",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-ce326ccd9a29af3db0",
+      "region": "level_ru_04_01",
+      "map": "level_ru_04_01",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "long_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 4
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_01_SAWMILL",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsLong"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-4f4eab8919f1f5cbe3",
+      "region": "level_ru_04_01",
+      "map": "level_ru_04_01",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "short_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_01_SAWMILL",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsShort"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-4ed00d4ef22367b59c",
+      "region": "level_ru_04_04",
+      "map": "level_ru_04_04",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 3
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_04_LUMBER_MILL",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-62ef647f91c1fbd98d",
+      "region": "level_ru_04_04",
+      "map": "level_ru_04_04",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "long_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 4
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_04_LUMBER_MILL",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsLong"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-1e0e27701dc88c8b49",
+      "region": "level_ru_04_04",
+      "map": "level_ru_04_04",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "short_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_04_LUMBER_MILL",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsShort"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-d094b1dddcf17adf10",
+      "region": "level_ru_04_04",
+      "map": "level_ru_04_04",
+      "name": {
+        "ru": "Большая труба",
+        "en": "Large Pipe"
+      },
+      "inputs": {
+        "medium_pipes": 1,
+        "metal_rolls": 2
+      },
+      "outputs": {
+        "large_pipe": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_04_CRAFT_01",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoPipeLarge",
+        "inputs": [
+          "CargoPipesMedium",
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-4c9166e266f0a9785e",
+      "region": "level_ru_04_04",
+      "map": "level_ru_04_04",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {
+        "medium_pipes": 1,
+        "metal_rolls": 2
+      },
+      "outputs": {
+        "metal_beams": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_04_CRAFT_01",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": [
+          "CargoPipesMedium",
+          "CargoMetalRoll"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-39442c538e48f1d557",
+      "region": "level_ru_04_04",
+      "map": "level_ru_04_04",
+      "name": {
+        "ru": "Бетонная плита",
+        "en": "Concrete Slab"
+      },
+      "inputs": {
+        "concrete_blocks": 1,
+        "cement": 1,
+        "packaged_sand": 1
+      },
+      "outputs": {
+        "concrete_slab": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "RU_04_04_CRAFT_01",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoConcreteSlab",
+        "inputs": [
+          "CargoConcreteBlocks",
+          "CargoBags",
+          "CargoBags2"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-aef9b3b89d21bdb333",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Рулоны металла",
+        "en": "Metal Rolls"
+      },
+      "inputs": {
+        "metal_beams": 1
+      },
+      "outputs": {
+        "metal_rolls": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_STEEL_CRAFT",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoMetalRoll",
+        "inputs": [
+          "CargoMetalPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-fc3b25ae21f4793333",
+      "region": "level_us_03_01",
+      "map": "level_us_03_01",
+      "name": {
+        "ru": "Кирпичи",
+        "en": "Bricks"
+      },
+      "inputs": {
+        "cement": 1,
+        "packaged_sand": 1
+      },
+      "outputs": {
+        "bricks": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_03_01_BRICK_CRAFT",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoBricks",
+        "inputs": [
+          "CargoBags",
+          "CargoBags2"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-d198a294ea260ec382",
+      "region": "level_us_07_01",
+      "map": "level_us_07_01",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {},
+      "outputs": {
+        "metal_beams": 1
+      },
+      "generator": true,
+      "energy": 200,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_07_01_GEN_01_01",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-610743cb118113dd11",
+      "region": "level_us_07_01",
+      "map": "level_us_07_01",
+      "name": {
+        "ru": "Деревянные доски (тип 2)",
+        "en": "Wooden Planks (type 2)"
+      },
+      "inputs": {},
+      "outputs": {
+        "wooden_planks_type2": 1
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_07_01_GEN_01_01",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks2",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-0689babf5bfd2ede13",
+      "region": "level_us_07_01",
+      "map": "level_us_07_01",
+      "name": {
+        "ru": "Особые запчасти для обслуживания",
+        "en": "Special Service Spare Parts"
+      },
+      "inputs": {},
+      "outputs": {
+        "service_spare_parts_special": 1
+      },
+      "generator": true,
+      "energy": 250,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_07_01_GEN_01_01",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoServiceSparePartsSpecial",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-132d11da8849314ea3",
+      "region": "level_us_07_01",
+      "map": "level_us_07_01",
+      "name": {
+        "ru": "Запчасти для автомобилей",
+        "en": "Vehicle Spare Parts"
+      },
+      "inputs": {},
+      "outputs": {
+        "vehicle_spare_parts": 1
+      },
+      "generator": true,
+      "energy": 250,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_07_01_GEN_01_01",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoVehiclesSpareParts",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-e0c847fd20d1f566ba",
+      "region": "level_us_07_01",
+      "map": "level_us_07_01",
+      "name": {
+        "ru": "Расходные материалы",
+        "en": "Consumables"
+      },
+      "inputs": {},
+      "outputs": {
+        "consumables": 1
+      },
+      "generator": true,
+      "energy": 250,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_07_01_GEN_01_01",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoCrateLarge",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-3d7f69b07ce1728f19",
+      "region": "level_us_12_04",
+      "map": "level_us_12_04",
+      "name": {
+        "ru": "Металлические балки",
+        "en": "Metal Beams"
+      },
+      "inputs": {},
+      "outputs": {
+        "metal_beams": 1
+      },
+      "generator": true,
+      "energy": 200,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_12_04_FACTORY_CRAFT_METAL",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoMetalPlanks",
+        "inputs": []
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-8e6021b9d682201a3a",
+      "region": "level_us_12_04",
+      "map": "level_us_12_04",
+      "name": {
+        "ru": "Рулоны металла",
+        "en": "Metal Rolls"
+      },
+      "inputs": {
+        "metal_beams": 1
+      },
+      "outputs": {
+        "metal_rolls": 2
+      },
+      "generator": true,
+      "energy": 100,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_12_04_FACTORY_CRAFT_METAL",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoMetalRoll",
+        "inputs": [
+          "CargoMetalPlanks"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-6cf54444061edcef16",
+      "region": "level_us_16_02",
+      "map": "level_us_16_02",
+      "name": {
+        "ru": "Деревянные доски",
+        "en": "Wooden Planks"
+      },
+      "inputs": {
+        "short_logs": 1
+      },
+      "outputs": {
+        "wooden_planks": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_16_02_SAWMILL_01",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks",
+        "inputs": [
+          "CargoLogsShort"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-81f52c2791f93e64ed",
+      "region": "level_us_16_02",
+      "map": "level_us_16_02",
+      "name": {
+        "ru": "Деревянные доски (тип 2)",
+        "en": "Wooden Planks (type 2)"
+      },
+      "inputs": {
+        "medium_logs": 1
+      },
+      "outputs": {
+        "wooden_planks_type2": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_16_02_SAWMILL_01",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks2",
+        "inputs": [
+          "CargoLogsMedium"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-9505fd92a7ac17e56f",
+      "region": "level_us_16_02",
+      "map": "level_us_16_02",
+      "name": {
+        "ru": "Деревянные доски (тип 4)",
+        "en": "Wooden Planks (type 4)"
+      },
+      "inputs": {
+        "long_logs": 1
+      },
+      "outputs": {
+        "wooden_planks_type4": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_16_02_SAWMILL_01",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoWoodenPlanks4",
+        "inputs": [
+          "CargoLogsLong"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-6e084d3f33cfb750a3",
+      "region": "level_us_16_03",
+      "map": "level_us_16_03",
+      "name": {
+        "ru": "Бетонная плита",
+        "en": "Concrete Slab"
+      },
+      "inputs": {
+        "cement": 1
+      },
+      "outputs": {
+        "concrete_slab": 1
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_16_03_CONCRETE_STORAGE",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoConcreteSlab",
+        "inputs": [
+          "CargoBags"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-678106ac23949cd13e",
+      "region": "level_us_16_03",
+      "map": "level_us_16_03",
+      "name": {
+        "ru": "Бетонные блоки",
+        "en": "Concrete Blocks"
+      },
+      "inputs": {
+        "cement": 1
+      },
+      "outputs": {
+        "concrete_blocks": 2
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_16_03_CONCRETE_STORAGE",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoConcreteBlocks",
+        "inputs": [
+          "CargoBags"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    },
+    {
+      "id": "cache-e51eecb82fd18d821a",
+      "region": "level_us_18_02",
+      "map": "level_us_18_02",
+      "name": {
+        "ru": "Тетрапод",
+        "en": "Tetrapod"
+      },
+      "inputs": {
+        "metal_beams": 1,
+        "packaged_sand": 2
+      },
+      "outputs": {
+        "tetrapod": 4
+      },
+      "generator": false,
+      "energy": 0,
+      "notes": {
+        "ru": "Рецепт из игровых файлов. Производство открывается после выполнения задания.",
+        "en": "Recipe from game files. Crafting becomes available after completing a mission."
+      },
+      "verified": "local_game_data",
+      "game_zone": "US_18_02_CONCRETE_FACTORY_CRAFT",
+      "unlock_condition": "objective_reward",
+      "source_game_ids": {
+        "output": "CargoTetrapod",
+        "inputs": [
+          "CargoMetalPlanks",
+          "CargoBags2"
+        ]
+      },
+      "source_format_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/"
+    }
+  ],
+  "verification_policy": {
+    "ru": "100 точных записей craftSettings из пользовательской Steam-копии SnowRunner; 2 рецепта тестовой зоны PROG_SANDBOX исключены. Ключи карт сохранены по внутренним ID; названия отдельных редких грузов уточняются.",
+    "en": "100 explicit craftSettings entries extracted from the user-provided game file; 2 PROG_SANDBOX test-zone recipes excluded. Map identifiers preserved; some uncommon cargo labels remain provisional."
+  },
+  "source_url": "https://expeditions-guides.saber.games/map_modding/creating_a_map/zones/snowrunner_zones/storehouse_craft_and_energy_zones/",
+  "source_file_sha256": "2c6fd3d34229fdcff3c1615a3022117d2e84df75ad0f89351a715f1b6fb1fec2",
+  "source_file_name": "initial.cache_block",
+  "version": "1.4",
+  "map_name_sources": [
+    "https://www.maprunner.info/ru",
+    "https://gist.github.com/NickSlash/71df5787fcd1e68dc1d771e2e5bd32f8",
+    "https://community.focus-entmt.com/focus-entertainment/snowrunner/blogs/263-snowrunner-s-season-16-is-live"
+  ]
+}

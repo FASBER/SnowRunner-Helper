@@ -1,0 +1,7 @@
+SnowRunner Craft Assistant v23 — approved cargo icons
+
+- Replaced 73 bundled cargo icons with the approved transparent-background variants prepared from the user-supplied cargo.zip.
+- Transparent images apply throughout Cargo, Crafting cargo references, Calculator and Guide views; game save files remain untouched.
+- Preserves the switchable Expedition UI / Classic UI and user-selected custom icon priority.
+- User-supplied custom cargo images, if any, still take precedence over these defaults.
+- This update affects bundled artwork only, not gameplay data.

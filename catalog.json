@@ -1,0 +1,539 @@
+{
+  "source": "https://www.maprunner.info/cargo",
+  "checked": "2026-11-18",
+  "cargo": [
+    {
+      "id": "ba_20_armored_car",
+      "en": "BA-20 armored car",
+      "ru": "Бронеавтомобиль БА-20",
+      "slots": 2,
+      "category": "mission"
+    },
+    {
+      "id": "bricks",
+      "en": "Bricks",
+      "ru": "Кирпичи",
+      "slots": 1,
+      "category": "construction",
+      "game_id": "CargoBricks"
+    },
+    {
+      "id": "burnt_logs",
+      "en": "Burnt logs",
+      "ru": "Обгоревшие брёвна",
+      "slots": null,
+      "category": "logs"
+    },
+    {
+      "id": "cabin",
+      "en": "Cabin",
+      "ru": "Бытовка",
+      "slots": 2,
+      "category": "construction",
+      "game_id": "CargoForkliftCaravanContainer2"
+    },
+    {
+      "id": "cable_car",
+      "en": "Cable Car",
+      "ru": "Канатная кабина",
+      "slots": 2,
+      "category": "mission"
+    },
+    {
+      "id": "cable_drum",
+      "en": "Cable Drum",
+      "ru": "Кабельный барабан",
+      "slots": 1,
+      "category": "industrial"
+    },
+    {
+      "id": "cargo_container",
+      "en": "Cargo Container",
+      "ru": "Грузовой контейнер",
+      "slots": 2,
+      "category": "container",
+      "game_id": "CargoContainerSmall"
+    },
+    {
+      "id": "cellulose",
+      "en": "Cellulose",
+      "ru": "Целлюлоза",
+      "slots": 1,
+      "category": "supplies"
+    },
+    {
+      "id": "cement",
+      "en": "Cement",
+      "ru": "Цемент",
+      "slots": 1,
+      "category": "construction",
+      "game_id": "CargoBags"
+    },
+    {
+      "id": "chemical_barrels",
+      "en": "Chemical Barrels",
+      "ru": "Бочки с химикатами",
+      "slots": 1,
+      "category": "supplies"
+    },
+    {
+      "id": "cistern",
+      "en": "Cistern",
+      "ru": "Цистерна",
+      "slots": 5,
+      "category": "mission"
+    },
+    {
+      "id": "concrete_blocks",
+      "en": "Concrete Blocks",
+      "ru": "Бетонные блоки",
+      "slots": 1,
+      "category": "construction",
+      "game_id": "CargoConcreteBlocks"
+    },
+    {
+      "id": "concrete_slab",
+      "en": "Concrete Slab",
+      "ru": "Бетонная плита",
+      "slots": 2,
+      "category": "construction",
+      "game_id": "CargoConcreteSlab"
+    },
+    {
+      "id": "consumables",
+      "en": "Consumables",
+      "ru": "Расходные материалы",
+      "slots": 1,
+      "category": "supplies",
+      "game_id": "CargoCrateLarge"
+    },
+    {
+      "id": "data_buoy",
+      "en": "Data Buoy",
+      "ru": "Буёк сбора данных",
+      "slots": 2,
+      "category": "mission"
+    },
+    {
+      "id": "drilling_equipment",
+      "en": "Drilling Equipment",
+      "ru": "Буровое оборудование",
+      "slots": 4,
+      "category": "industrial"
+    },
+    {
+      "id": "drilling_spare_parts",
+      "en": "Drilling Spare Parts",
+      "ru": "Запчасти для бурения",
+      "slots": 1,
+      "category": "supplies"
+    },
+    {
+      "id": "empty_container",
+      "en": "Empty Container",
+      "ru": "Пустой контейнер",
+      "slots": 2,
+      "category": "container"
+    },
+    {
+      "id": "engine_assembly",
+      "en": "Engine Assembly",
+      "ru": "Двигатель в сборе",
+      "slots": 1,
+      "category": "industrial"
+    },
+    {
+      "id": "extended_crew_cabin",
+      "en": "Extended Crew Cabin",
+      "ru": "Удлинённая бытовка",
+      "slots": 4,
+      "category": "construction"
+    },
+    {
+      "id": "fertilizer",
+      "en": "Fertilizer",
+      "ru": "Удобрение",
+      "slots": 1,
+      "category": "agriculture"
+    },
+    {
+      "id": "filled_container",
+      "en": "Filled Container",
+      "ru": "Заполненный контейнер",
+      "slots": 2,
+      "category": "container"
+    },
+    {
+      "id": "freezer",
+      "en": "Freezer",
+      "ru": "Холодильная камера",
+      "slots": 2,
+      "category": "container"
+    },
+    {
+      "id": "fuel",
+      "en": "Fuel",
+      "ru": "Топливо (груз)",
+      "slots": 1,
+      "category": "supplies"
+    },
+    {
+      "id": "garbage",
+      "en": "Garbage",
+      "ru": "Мусор",
+      "slots": 2,
+      "category": "supplies"
+    },
+    {
+      "id": "gold",
+      "en": "Gold",
+      "ru": "Золото",
+      "slots": 1,
+      "category": "industrial"
+    },
+    {
+      "id": "hay_bale",
+      "en": "Hay Bale",
+      "ru": "Тюк сена",
+      "slots": 1,
+      "category": "agriculture"
+    },
+    {
+      "id": "industrial_boiler",
+      "en": "Industrial boiler",
+      "ru": "Промышленный котёл",
+      "slots": 5,
+      "category": "industrial"
+    },
+    {
+      "id": "industrial_chiller",
+      "en": "Industrial Chiller",
+      "ru": "Промышленный охладитель",
+      "slots": 6,
+      "category": "industrial"
+    },
+    {
+      "id": "large_pipe",
+      "en": "Large Pipe",
+      "ru": "Большая труба",
+      "slots": 4,
+      "category": "industrial",
+      "game_id": "CargoPipeLarge"
+    },
+    {
+      "id": "long_logs",
+      "en": "Long Logs",
+      "ru": "Длинные брёвна",
+      "slots": null,
+      "category": "logs",
+      "game_id": "CargoLogsLong"
+    },
+    {
+      "id": "long_planks",
+      "en": "Long Planks",
+      "ru": "Длинные доски",
+      "slots": 4,
+      "category": "wood"
+    },
+    {
+      "id": "medium_logs",
+      "en": "Medium Logs",
+      "ru": "Средние брёвна",
+      "slots": null,
+      "category": "logs",
+      "game_id": "CargoLogsMedium"
+    },
+    {
+      "id": "medium_pipes",
+      "en": "Medium Pipes",
+      "ru": "Средние трубы",
+      "slots": 2,
+      "category": "industrial",
+      "game_id": "CargoPipesMedium"
+    },
+    {
+      "id": "medium_planks",
+      "en": "Medium Planks",
+      "ru": "Средние доски",
+      "slots": 2,
+      "category": "wood"
+    },
+    {
+      "id": "metal_beams",
+      "en": "Metal Beams",
+      "ru": "Металлические балки",
+      "slots": 2,
+      "category": "metal",
+      "game_id": "CargoMetalPlanks"
+    },
+    {
+      "id": "metal_rolls",
+      "en": "Metal Rolls",
+      "ru": "Рулоны металла",
+      "slots": 1,
+      "category": "metal",
+      "game_id": "CargoMetalRoll"
+    },
+    {
+      "id": "mine_cart",
+      "en": "Mine Cart",
+      "ru": "Шахтная вагонетка",
+      "slots": 2,
+      "category": "industrial"
+    },
+    {
+      "id": "multistage_pump",
+      "en": "Multistage Pump",
+      "ru": "Многоступенчатый насос",
+      "slots": 2,
+      "category": "industrial"
+    },
+    {
+      "id": "oil_barrels",
+      "en": "Oil Barrels",
+      "ru": "Бочки с нефтью",
+      "slots": 1,
+      "category": "supplies",
+      "game_id": "CargoBarrels"
+    },
+    {
+      "id": "oil_rig_drill",
+      "en": "Oil Rig Drill",
+      "ru": "Буровая установка",
+      "slots": 5,
+      "category": "industrial"
+    },
+    {
+      "id": "oversized_cargo",
+      "en": "Oversized Cargo",
+      "ru": "Крупногабаритный груз",
+      "slots": 4,
+      "category": "mission"
+    },
+    {
+      "id": "packaged_sand",
+      "en": "Packaged Sand",
+      "ru": "Упакованный песок",
+      "slots": 1,
+      "category": "construction",
+      "game_id": "CargoBags2"
+    },
+    {
+      "id": "part_of_the_airplane_fuselage",
+      "en": "Part of the airplane fuselage",
+      "ru": "Часть фюзеляжа самолёта",
+      "slots": 5,
+      "category": "mission"
+    },
+    {
+      "id": "piece_of_the_airplane_wing",
+      "en": "Piece of the airplane wing",
+      "ru": "Часть крыла самолёта",
+      "slots": 4,
+      "category": "mission"
+    },
+    {
+      "id": "potato_samples",
+      "en": "Potato Samples",
+      "ru": "Образцы картофеля",
+      "slots": 1,
+      "category": "agriculture"
+    },
+    {
+      "id": "potatoes",
+      "en": "Potatoes",
+      "ru": "Картофель",
+      "slots": 1,
+      "category": "agriculture"
+    },
+    {
+      "id": "rail_section",
+      "en": "Rail Section",
+      "ru": "Рельсовая секция",
+      "slots": 5,
+      "category": "industrial",
+      "game_id": "CargoRailway"
+    },
+    {
+      "id": "rails",
+      "en": "Rails",
+      "ru": "Рельсы",
+      "slots": 4,
+      "category": "industrial"
+    },
+    {
+      "id": "repair_parts",
+      "en": "Repair Parts",
+      "ru": "Ремонтные очки",
+      "slots": null,
+      "category": "special"
+    },
+    {
+      "id": "rescue_shelter",
+      "en": "Rescue Shelter",
+      "ru": "Спасательное укрытие",
+      "slots": 4,
+      "category": "mission"
+    },
+    {
+      "id": "secure_container",
+      "en": "Secure Container",
+      "ru": "Защищённый контейнер",
+      "slots": 1,
+      "category": "container"
+    },
+    {
+      "id": "sequoia",
+      "en": "Sequoia",
+      "ru": "Секвойя",
+      "slots": 5,
+      "category": "wood"
+    },
+    {
+      "id": "service_spare_parts",
+      "en": "Service Spare Parts",
+      "ru": "Запчасти для обслуживания",
+      "slots": 1,
+      "category": "supplies"
+    },
+    {
+      "id": "short_logs",
+      "en": "Short Logs",
+      "ru": "Короткие брёвна",
+      "slots": null,
+      "category": "logs",
+      "game_id": "CargoLogsShort"
+    },
+    {
+      "id": "silver",
+      "en": "Silver",
+      "ru": "Серебро",
+      "slots": 1,
+      "category": "industrial"
+    },
+    {
+      "id": "slate_blocks",
+      "en": "Slate Blocks",
+      "ru": "Сланцевые блоки",
+      "slots": 2,
+      "category": "construction"
+    },
+    {
+      "id": "small_pipes",
+      "en": "Small Pipes",
+      "ru": "Малые трубы",
+      "slots": 2,
+      "category": "industrial",
+      "game_id": "CargoPipesSmall"
+    },
+    {
+      "id": "solar_panels",
+      "en": "Solar Panels",
+      "ru": "Солнечные панели",
+      "slots": 1,
+      "category": "industrial"
+    },
+    {
+      "id": "soybeans",
+      "en": "Soybeans",
+      "ru": "Соевые бобы",
+      "slots": 1,
+      "category": "agriculture"
+    },
+    {
+      "id": "special_cargo",
+      "en": "Special Cargo",
+      "ru": "Особый груз",
+      "slots": 2,
+      "category": "mission"
+    },
+    {
+      "id": "stage_2_fuel_tank",
+      "en": "Stage 2 Fuel Tank",
+      "ru": "Топливный бак второй ступени",
+      "slots": 3,
+      "category": "mission"
+    },
+    {
+      "id": "stage_3_fuel_tank",
+      "en": "Stage 3 Fuel Tank",
+      "ru": "Топливный бак третьей ступени",
+      "slots": 3,
+      "category": "mission"
+    },
+    {
+      "id": "tetrapod",
+      "en": "Tetrapod",
+      "ru": "Тетрапод",
+      "slots": 1,
+      "category": "construction",
+      "game_id": "CargoTetrapod"
+    },
+    {
+      "id": "transformer",
+      "en": "Transformer",
+      "ru": "Трансформатор",
+      "slots": 3,
+      "category": "industrial"
+    },
+    {
+      "id": "vehicle_spare_parts",
+      "en": "Vehicle Spare Parts",
+      "ru": "Запчасти для автомобилей",
+      "slots": 1,
+      "category": "supplies",
+      "game_id": "CargoVehiclesSpareParts"
+    },
+    {
+      "id": "water",
+      "en": "Water",
+      "ru": "Вода (жидкий груз)",
+      "slots": null,
+      "category": "special"
+    },
+    {
+      "id": "water_pipe",
+      "en": "Water Pipe",
+      "ru": "Водопроводная труба",
+      "slots": 3,
+      "category": "industrial",
+      "game_id": "CargoWaterPipe"
+    },
+    {
+      "id": "wing_fragments_with_the_engine",
+      "en": "Wing fragments with the engine",
+      "ru": "Фрагменты крыла с двигателем",
+      "slots": 5,
+      "category": "mission"
+    },
+    {
+      "id": "wooden_planks",
+      "en": "Wooden Planks",
+      "ru": "Деревянные доски",
+      "slots": 1,
+      "category": "wood",
+      "game_id": "CargoWoodenPlanks"
+    },
+    {
+      "id": "wooden_planks_type2",
+      "ru": "Деревянные доски (тип 2)",
+      "en": "Wooden Planks (type 2)",
+      "slots": null,
+      "game_id": "CargoWoodenPlanks2"
+    },
+    {
+      "id": "wooden_planks_type4",
+      "ru": "Деревянные доски (тип 4)",
+      "en": "Wooden Planks (type 4)",
+      "slots": null,
+      "game_id": "CargoWoodenPlanks4"
+    },
+    {
+      "id": "service_spare_parts_special",
+      "ru": "Особые запчасти для обслуживания",
+      "en": "Special Service Spare Parts",
+      "slots": null,
+      "game_id": "CargoServiceSparePartsSpecial"
+    }
+  ]
+}

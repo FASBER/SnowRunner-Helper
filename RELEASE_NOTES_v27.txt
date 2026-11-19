@@ -1,0 +1,1 @@
+v27: signed OTA client, background check, user consent, safe download, installer launch, UI; no release server configured yet.
