@@ -20,6 +20,7 @@ from icon_manager import (cargo_icon_path, has_custom_icon,
                           install_cargo_icon, reset_cargo_icon)
 from update_config import CURRENT_VERSION
 from update_ui import UpdaterUI
+from cargo_weight_v317 import cargo_weight_label
 
 from core import (USER_DIR, CARGO, CARGO_DB, BUILTIN_RECIPES, REGIONS, SETTINGS_FILE,
                   CUSTOM_FILE, IMPORTED_FILE, load_game_recipes, SORT_MODES, calculate_load, cargo_slots,
@@ -156,14 +157,14 @@ class Application:
         # One-time opt-in to the newly approved screenshot theme. Existing user
         # language, sorting and custom recipes remain unchanged.
         if not self.config.get('v05_game_theme_offered'):
-            self.config['theme'] = 'game'
+            # Migration is a one-time flag, not permission to erase a saved choice.
             self.config['v05_game_theme_offered'] = True
             save_json(SETTINGS_FILE, self.config)
         if self.config.get('lang') not in TR: self.config['lang'] = 'ru'
         if self.config.get('sort') not in SORT_MODES: self.config['sort'] = 'name_asc'
         self.config['ui_scale'] = max(75,min(140,int(self.config.get('ui_scale',100))))
         self.config['text_size'] = max(75,min(150,int(self.config.get('text_size',100))))
-        self.config['theme']='game'  # The SnowRunner canvas supports classic and expedition UI skins
+        # Keep the selected theme across restarts; never force 'game'.
         if self.config.get('ui_design') not in ('classic','expedition'):
             self.config['ui_design']='expedition'
         self.config['appearance']=normalize(self.config.get('appearance'))
@@ -395,10 +396,10 @@ class Application:
         self.root.option_add('*TCombobox*Listbox.selectBackground', self.c('accent'))
 
     def render(self):
-        self.root.tk.call('tk','scaling',self._tk_base_scaling*(self.config.get('ui_scale',100)/100 if self.config['theme']!='game' else 1))
+        self.root.tk.call('tk','scaling',self._tk_base_scaling*(self.config.get('ui_scale',100)/100 if self.config.get('ui_design') != 'expedition' and self.config['theme'] != 'game' else 1))
         # The game screenshot skin is implemented as a real interactive canvas,
         # not a static screenshot. Other color themes retain the original UI.
-        if self.config['theme'] == 'game':
+        if self.config.get('ui_design') == 'expedition' or self.config['theme'] == 'game':
             for child in self.root.winfo_children():
                 if not isinstance(child,tk.Toplevel): child.destroy()
             from game_ui import GameScreen
@@ -604,6 +605,9 @@ class Application:
             self.lbl(cargo_info, (f'{size} {self.t("slot_unit")}' if size is not None
                               else self.t('no_standard')), fg='accent', size=10,
                      bold=True, wraplength=205, justify='left').pack(anchor='w')
+            self.lbl(cargo_info, ('Вес: ' if self.config['lang']=='ru' else 'Weight: ')
+                     + cargo_weight_label(CARGO.get(cid),self.config['lang']),
+                     fg='muted',size=10).pack(anchor='w',pady=(3,0))
             icon_controls = self.f(detail)
             icon_controls.pack(fill='x', pady=(2, 9))
             self.btn(icon_controls, self.t('change_icon'), lambda c=cid:self.change_cargo_icon(c)).pack(fill='x', pady=(0, 4))
@@ -984,6 +988,11 @@ class Application:
             parent=self.root)
         self.selected_recipe=None
         self.render()
+
+    def refresh_game_data(self):
+        """One-click refresh: selected game save plus unique local initial.pak."""
+        from features_v317 import refresh_game_data
+        return refresh_game_data(self)
 
     def _save_profile_draft(self, force=False):
         """Synchronous per-profile autosave, including before any switch or exit."""
@@ -1560,6 +1569,8 @@ class Application:
                  self.select_game_directory).pack(side='left',padx=(0,8))
         self.btn(game_buttons, 'Выбрать сохранения' if is_ru else 'Select save folder',
                  self.select_save_directory).pack(side='left')
+        self.btn(pane, '⟳  Обновить игровые данные' if is_ru else '⟳  Refresh game data',
+                 self.refresh_game_data).pack(anchor='w', padx=23, pady=(0, 9))
         self.btn(pane, 'Обновить рецепты из initial.pak' if is_ru else 'Refresh recipes from initial.pak',
                  self.refresh_from_installed_game).pack(anchor='w', padx=23, pady=(0, 12))
         self.lbl(pane, ('Чтение только для просмотра. Активное сохранение не угадывается. '
@@ -1591,7 +1602,7 @@ class Application:
                 try:settings['nav_icons'][kind]=_copy_asset(path,managed)
                 except (OSError,ValueError) as exc:messagebox.showwarning('Icon',str(exc),parent=self.root)
         self.config['appearance']=settings
-        self.config['theme']='game'
+        # Appearance editor does not overwrite the user's palette choice.
         self.config['ui_scale']=settings['ui_scale']
         self.config['text_size']=settings['text_size']
         self.config['animations']=settings['animations']

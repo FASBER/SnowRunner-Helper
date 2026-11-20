@@ -16,6 +16,8 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageTk, ImageEnhance, ImageOps, ImageColor
 from icon_manager import cargo_icon_path, has_custom_icon
 from appearance import normalize, asset_path, PRESETS
+from theme_v317 import theme_color, theme_background, THEME_LABELS
+from cargo_weight_v317 import cargo_weight_label
 import webbrowser
 from core import (ROOT, CARGO_DB, CARGO, BUILTIN_RECIPES, SORT_MODES,
                   cargo_slots, display_cargo, display_region, display_recipe_location, display_recipe_notes, text_value,
@@ -123,6 +125,14 @@ class GameScreen:
                 widget.configure(bg='#213540',fg=FG,insertbackground=YELLOW)
             for widget in (self.search_placeholder,self.calc_search_placeholder):
                 widget.configure(bg='#213540',fg=MUTED)
+        if app.config.get('theme','game') != 'game':
+            for widget in (self.search_entry,self.calc_search_entry):
+                widget.configure(bg=self.ui_color('#213540'),
+                                 fg=self.ui_color('#F1F2F0','text'),
+                                 insertbackground=self.ui_color('#F1F2F0','text'))
+            for widget in (self.search_placeholder,self.calc_search_placeholder):
+                widget.configure(bg=self.ui_color('#213540'),
+                                 fg=self.ui_color('#BDC2C4','text'))
         self.maximized = False
         self.calculator_cargo = 'metal_beams'
         self._build_background()
@@ -186,6 +196,9 @@ class GameScreen:
             ROW_HOVER='#28414B'
             MUTED='#9BB0BF'
             BORDER='#344C5B'
+        if self.app.config.get('theme','game') != 'game':
+            BG=self.app.c('bg'); FG=self.app.c('fg')
+            MUTED=self.app.c('muted');YELLOW=self.app.c('accent')
 
     def _remember_geometry(self,event):
         if event.widget != self.root or self._window_drag or self._window_resize:
@@ -432,6 +445,9 @@ class GameScreen:
         family=self.app.font_manager.family(text,self.lang)
         font_px=max(7,int(size*self.scale*self.app.config.get('text_size',100)/100))
         return (family,font_px,'bold' if bold else 'normal')
+    def ui_color(self, color, kind='surface'):
+        return theme_color(color,self.app.config.get('theme','game'),kind)
+
     def txt(self,x,y,text,size=14,color=FG,bold=False,anchor='w',limit=None):
         text=str(text)
         if color=='#F1F2F0':color=self.appearance['fg']
@@ -448,21 +464,21 @@ class GameScreen:
             if f.measure(text)>max_px:
                 while len(text)>1 and f.measure(text+'…')>max_px:text=text[:-1]
                 text+='…'
-            return self.canvas.create_text(*self.p(x,y),text=text,fill=color,
+            return self.canvas.create_text(*self.p(x,y),text=text,fill=self.ui_color(color,'text'),
                          font=(family,font_size,'bold' if bold else 'normal'),anchor=anchor)
-        return self.canvas.create_text(*self.p(x,y),text=text,fill=color,font=self.font(size,bold,text),anchor=anchor)
+        return self.canvas.create_text(*self.p(x,y),text=text,fill=self.ui_color(color,'text'),font=self.font(size,bold,text),anchor=anchor)
     def rect(self,x1,y1,x2,y2,fill,outline='',width=1):
-        return self.canvas.create_rectangle(*self.p(x1,y1),*self.p(x2,y2),fill=fill,
-                                             outline=outline,width=max(1,self.s(width)))
+        return self.canvas.create_rectangle(*self.p(x1,y1),*self.p(x2,y2),fill=self.ui_color(fill),
+                                             outline=self.ui_color(outline),width=max(1,self.s(width)))
     def line(self,x1,y1,x2,y2,color=BORDER,width=1):
         if color=='#3A454C':color=self.appearance['border']
-        return self.canvas.create_line(*self.p(x1,y1),*self.p(x2,y2),fill=color,width=max(1,self.s(width)))
+        return self.canvas.create_line(*self.p(x1,y1),*self.p(x2,y2),fill=self.ui_color(color),width=max(1,self.s(width)))
     def round(self,x1,y1,x2,y2,r,fill,outline='',width=1):
         x1,y1=self.p(x1,y1); x2,y2=self.p(x2,y2); r=self.s(min(r,self.appearance.get('corner_radius',8)))
         pts=[x1+r,y1,x2-r,y1,x2,y1,x2,y1+r,x2,y2-r,x2,y2,
              x2-r,y2,x1+r,y2,x1,y2,x1,y2-r,x1,y1+r,x1,y1]
         return self.canvas.create_polygon(pts,smooth=True,splinesteps=10,
-                                fill=fill,outline=outline,width=max(1,self.s(width)))
+                                fill=self.ui_color(fill),outline=self.ui_color(outline),width=max(1,self.s(width)))
     def image(self, name, x,y, width,height,recipe=False):
         folder='recipes' if recipe else 'cargo'
         from app import OVERRIDE_ASSETS
@@ -695,7 +711,7 @@ class GameScreen:
         self.hitboxes=[];self.refs=[]
         sz=(max(1,int(W*self.sx)),max(1,int(H*self.sy)))
         if sz not in self.bg_cache:
-            self.bg_cache[sz]=ImageTk.PhotoImage(self.base_image.resize(sz,Image.Resampling.LANCZOS),master=self.root)
+            self.bg_cache[sz]=ImageTk.PhotoImage(theme_background(self.base_image,self.app.config.get('theme','game')).resize(sz,Image.Resampling.LANCZOS),master=self.root)
         self.canvas.create_image(self.ox,self.oy,image=self.bg_cache[sz],anchor='nw')
         self.draw_nav()
         self.draw_toolbar()
@@ -862,13 +878,10 @@ class GameScreen:
             self.round(789,y+15,789+chipw,y+42,14,'#1B3843' if not chosen else '#494530','#385665')
             self.txt(789+chipw/2,y+28,category,12,FG,anchor='center',limit=chipw-12)
             self.line(944,y+11,944,y+46,'#39515A')
-            # Catalog currently lacks mass values: never fabricate game weights.
-            mass=item.get('mass_t')
-            if isinstance(mass,(float,int)) and not isinstance(mass,bool):
-                masslabel=f'{mass:.1f} т'.replace('.',',') if self.lang=='ru' else f'{mass:.1f} t'
-            else:masslabel='—'
+            # Never infer weight from cargo slots or undocumented numbers.
+            masslabel=cargo_weight_label(item,self.lang)
             self._reference_weight_icon(990,y+28)
-            self.txt(1012,y+28,masslabel,15,FG,limit=71)
+            self.txt(1012,y+28,masslabel,11,FG,limit=74)
             self.line(1087,y+11,1087,y+46,'#39515A')
             self._reference_slot_icon(1137,y+28)
             slots=item.get('slots')
@@ -928,6 +941,8 @@ class GameScreen:
         self.txt(969,393,self._reference_category_name(self._reference_category(item)),17,FG)
         self.txt(969,440,'Слотов:' if self.lang=='ru' else 'Slots:',15,MUTED)
         self.txt(969,474,str(item.get('slots')) if item.get('slots') is not None else '—',18,YELLOW,True)
+        self.txt(969,502,('Вес: ' if self.lang=='ru' else 'Weight: ')
+                 + cargo_weight_label(item,self.lang),13,FG,True,limit=260)
         self.line(739,521,1252,521,'#2F4B57')
         self.txt(742,562,'Нажми ×, чтобы вернуться к списку' if self.lang=='ru'
                  else 'Press × to return to the list',13,MUTED)
@@ -975,6 +990,9 @@ class GameScreen:
                 self.txt(363,60,'PLANNING  •  CRAFT  •  CARGO  •  CALCULATIONS',11,MUTED,limit=398)
             # Brand and truck belong to the approved decorative masthead.
             # All caption controls remain live (the image is not a clickable screenshot).
+            self.round(1026,7,1177,43,6,'#1B3945','#4A6B79')
+            self.txt(1101,25,'⟳  ОБНОВИТЬ' if self.lang=='ru' else '⟳  REFRESH',11,FG,True,anchor='center')
+            self.hit(1026,7,1177,43,self.app.refresh_game_data,('btn','refresh'))
             self.hit(1191,0,1228,45,self.minimize_window,('btn','min'))
             self.hit(1231,0,1268,45,self.toggle_maximize,('btn','max'))
             self.hit(1271,0,1319,45,self.app.close_app,('btn','close'))
@@ -990,6 +1008,8 @@ class GameScreen:
             self.txt(944,43,'Русский' if self.lang=='ru' else 'English',11,FG,limit=57)
             self.txt(1007,43,'⌄',15,FG)
             self.hit(884,25,1021,61,lambda:self.toggle('language'),('btn','lang'))
+            self.button(1027,25,1166,61,'⟳  '+('Обновить' if self.lang=='ru' else 'Refresh'),
+                        self.app.refresh_game_data,small=True)
             for x1,x2,symbol,action,tag in [(1174,1214,'−',self.minimize_window,'min'),
                                               (1218,1256,'□',self.toggle_maximize,'max'),
                                               (1260,1305,'×',self.app.close_app,'close')]:
@@ -1006,6 +1026,8 @@ class GameScreen:
         self.txt(929,43,'Русский' if self.lang=='ru' else 'English',11,FG,limit=83)
         self.txt(1006,44,'⌄',15,FG)
         self.hit(884,25,1021,61,lambda:self.toggle('language'),('btn','lang'))
+        self.button(1027,25,1166,61,'⟳  '+('Обновить' if self.lang=='ru' else 'Refresh'),
+                    self.app.refresh_game_data,small=True)
         for x1,x2,txt,action,tag in [(1174,1214,'—',self.minimize_window,'min'),
                                       (1218,1256,'□',self.toggle_maximize,'max'),
                                       (1260,1305,'×',self.app.close_app,'close')]:
@@ -1290,6 +1312,8 @@ class GameScreen:
         self.txt(1103,405,'Тип:' if self.lang=='ru' else 'Type:',13)
         cat=(CAT_RU if self.lang=='ru' else CAT_EN).get(item.get('category',''),item.get('category',''))
         self.txt(1267,405,cat,12,FG,anchor='e',limit=125)
+        self.txt(1058,438,('Вес: ' if self.lang=='ru' else 'Weight: ')
+                 + cargo_weight_label(item,self.lang),12,MUTED,limit=215)
         self.line(796,457,1284,457,'#343B42')
         self.txt(800,478,'⚒',26,YELLOW)
         self.txt(850,479,'Используется в крафте:' if self.lang=='ru' else 'Used in crafting:',17,FG,True)
@@ -1599,6 +1623,12 @@ class GameScreen:
         self.manual_verified_only=not self.manual_verified_only
         self.manual_offset=0;self.redraw()
 
+    def cycle_theme(self):
+        themes=('game','dark','light','forest')
+        current=self.app.config.get('theme','game')
+        target=themes[(themes.index(current)+1)%len(themes)] if current in themes else 'game'
+        self.app.change('theme',target)
+
     def draw_settings(self):
         self.draw_frame(self.t('settings'))
         ru=self.lang=='ru'
@@ -1626,6 +1656,10 @@ class GameScreen:
         self.button(1035,345,1280,385,'English',lambda:self.change('lang','en'),selected=not ru,small=True)
         self.settings_step('Масштаб интерфейса' if ru else 'Interface zoom','ui_scale',449)
         self.settings_step('Размер текста' if ru else 'Text size','text_size',531)
+        theme=self.app.config.get('theme','game')
+        self.button(289,635,708,658,('Цветовая тема: ' if ru else 'Color theme: ')
+                    + THEME_LABELS.get(theme,THEME_LABELS['game'])[0 if ru else 1] + '  ↻',
+                    self.cycle_theme,small=True)
         self.button(289,663,708,707,('Подключить игровые файлы SnowRunner' if ru
                                       else 'Connect SnowRunner game files'),
                     self.app.game_connection_dialog,small=True)
