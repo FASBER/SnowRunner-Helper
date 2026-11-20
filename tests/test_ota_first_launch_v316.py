@@ -1,4 +1,4 @@
-"""Regression checks for first launch after OTA upgrade to 0.31.8.
+"""Regression checks for first launch after OTA upgrade to 0.31.9.
 
 These tests verify source/script contracts. Inno Setup compilation and a real
 Windows OTA installation must also be tested on GitHub and the user's PC.
@@ -15,8 +15,8 @@ class OTAPostinstallChecks(unittest.TestCase):
         self.launcher = (ROOT / 'update_launcher.py').read_text(encoding='utf-8')
 
     def test_new_version_metadata(self):
-        self.assertEqual(json.loads((ROOT/'version.json').read_text(encoding='utf-8'))['version'], '0.31.8')
-        self.assertIn('#define MyAppVersion "0.31.8"', self.iss)
+        self.assertEqual(json.loads((ROOT/'version.json').read_text(encoding='utf-8'))['version'], '0.31.9')
+        self.assertIn('#define MyAppVersion "0.31.9"', self.iss)
 
     def test_autolaunch_is_not_unconditional(self):
         run_line = next(line for line in self.iss.splitlines() if line.startswith('Filename: "{app}\\{#MyAppExeName}"; Description:'))
@@ -41,7 +41,10 @@ class OTAPostinstallChecks(unittest.TestCase):
 
     def test_log_created_only_when_ota_is_done(self):
         self.assertIn('CurStep <> ssDone',self.iss)
-        self.assertIn('ota_setup_status_v0.31.8.txt',self.iss)
+        self.assertIn('ota_setup_status_v{#MyAppVersion}.txt',self.iss)
+        self.assertIn('OTA Setup v{#MyAppVersion} completed;',self.iss)
+        # Never hard-code a release number in the OTA status marker again.
+        self.assertNotRegex(self.iss, r'ota_setup_status_v\d+\.\d+\.\d+\.txt')
         self.assertIn('SaveStringToFile',self.iss)
         self.assertIn('ota_launch_error.txt',self.launcher)
 

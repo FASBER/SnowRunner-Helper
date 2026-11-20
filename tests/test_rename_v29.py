@@ -8,7 +8,7 @@ class RenameChecks(unittest.TestCase):
     def test_product_version_and_window_title(self):
         release=json.loads((ROOT/'version.json').read_text(encoding='utf-8'))
         self.assertEqual(release['name'],'SnowRunner Helper')
-        self.assertEqual(release['version'],'0.31.8')
+        self.assertEqual(release['version'],'0.31.9')
         self.assertIn("root.title('SnowRunner Helper'",(ROOT/'game_ui.py').read_text(encoding='utf-8'))
 
     def test_install_upgrade_preserves_identity_and_custom_path(self):
@@ -30,7 +30,7 @@ class RenameChecks(unittest.TestCase):
         builder=(ROOT/'build_windows.bat').read_text(encoding='utf-8')
         self.assertIn('--name "SnowRunnerHelper"',builder)
         iss=(ROOT/'setup_snowrunner.iss').read_text(encoding='utf-8')
-        self.assertIn('SnowRunnerHelper_Setup_v0.31.8',iss)
+        self.assertIn('SnowRunnerHelper_Setup_v0.31.9',iss)
         self.assertIn("f'SnowRunnerHelper_Setup_v{release.version}.exe'",(ROOT/'update_downloader.py').read_text(encoding='utf-8'))
         self.assertIn("f'SnowRunnerHelper_Setup_v{release.version}.exe'",(ROOT/'update_launcher.py').read_text(encoding='utf-8'))
         self.assertIn("f'SnowRunnerHelper_Setup_v{version}.exe'",(ROOT/'github_releases.py').read_text(encoding='utf-8'))
