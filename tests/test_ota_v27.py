@@ -101,7 +101,6 @@ class OTATests(unittest.TestCase):
             path=download_installer(release,directory,opener=opener)
             self.assertTrue(file_matches(path,release))
             self.assertEqual(path.read_bytes(),self.content)
-            # Cache must avoid extra download.
             self.assertEqual(download_installer(release,directory,opener=opener),path)
             self.assertEqual(len(calls),1)
 
@@ -127,10 +126,11 @@ class OTATests(unittest.TestCase):
             with self.assertRaises(UpdateSecurityError):
                 launch_installer('/tmp/fake.exe',rel,user_folder=directory,platform='nt')
             calls=[]
-            result=launch_installer(path,rel,user_folder=directory,platform='nt',
+            result=launch_installer(path,rel,user_folder=directory,platform='nt',parent_pid=123,
+                      powershell_exe='C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe',
                       popen=lambda *args,**kw:calls.append((args,kw)) or 'LAUNCHED')
             self.assertEqual(result,'LAUNCHED')
-            self.assertEqual(calls[0][0][0],[str(path)])
+            self.assertEqual(calls[0][0][0][1:5],['-NoProfile','-NonInteractive','-WindowStyle','Hidden'])
 
     def test_cancel_download_keeps_no_executable(self):
         from update_downloader import UpdateDownloadCancelled
@@ -149,7 +149,7 @@ class OTATests(unittest.TestCase):
 
     def test_pinned_key_and_https_must_be_set_for_production(self):
         import update_config
-        self.assertEqual(update_config.CURRENT_VERSION,'0.31.3')
+        self.assertEqual(update_config.CURRENT_VERSION,'0.31.4')
         self.assertEqual(update_config.RELEASE_MANIFEST_URL,'https://github.com/FASBER/SnowRunner-Helper/releases/latest/download/update.json')
         import os
         self.assertEqual(update_config.PUBLIC_KEY_ED25519_BASE64,os.getenv('OTA_ED25519_PUBLIC_BASE64',''))
