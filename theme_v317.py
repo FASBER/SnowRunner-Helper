@@ -79,6 +79,9 @@ def theme_background(image, theme):
     """
     from approved_reference_v311 import install_approved_ui, decorate_background
     # Install the explicit save-slot selection dialog, including its Save action.
+    # SnowRunner Steam saves contain a terminal NUL and slot-specific wrappers.
+    from save_reader_v315 import install_save_reader
+    install_save_reader()
     from profile_selector_v314 import install_profile_selector
     install_profile_selector()
     if image.size == (1319, 747) and image.getpixel((20,180))[:3] == (8,24,33):

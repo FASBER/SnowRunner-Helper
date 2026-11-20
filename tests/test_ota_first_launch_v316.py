@@ -1,4 +1,4 @@
-"""Regression checks for first launch after OTA upgrade to 0.31.14.
+"""Regression checks for first launch after OTA upgrade to 0.31.15.
 
 These tests verify source/script contracts. Inno Setup compilation and a real
 Windows OTA installation must also be tested on GitHub and the user's PC.
@@ -15,8 +15,8 @@ class OTAPostinstallChecks(unittest.TestCase):
         self.launcher = (ROOT / 'update_launcher.py').read_text(encoding='utf-8')
 
     def test_new_version_metadata(self):
-        self.assertEqual(json.loads((ROOT/'version.json').read_text(encoding='utf-8'))['version'], '0.31.14')
-        self.assertIn('#define MyAppVersion "0.31.14"', self.iss)
+        self.assertEqual(json.loads((ROOT/'version.json').read_text(encoding='utf-8'))['version'], '0.31.15')
+        self.assertIn('#define MyAppVersion "0.31.15"', self.iss)
 
     def test_autolaunch_is_not_unconditional(self):
         run_line = next(line for line in self.iss.splitlines() if line.startswith('Filename: "{app}\\{#MyAppExeName}"; Description:'))

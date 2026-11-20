@@ -1,4 +1,4 @@
-"""Regression coverage for low-latency mouse-wheel handling in v0.31.14."""
+"""Regression coverage for low-latency mouse-wheel handling in v0.31.15."""
 import unittest
 from types import SimpleNamespace
 from pathlib import Path

@@ -1,4 +1,4 @@
-"""Approved SnowRunner reference screen adapter (v0.31.14).
+"""Approved SnowRunner reference screen adapter (v0.31.15).
 
 The original GameScreen's working recipe/calculator/settings logic stays intact.
 Only its approved Expedition Cargo canvas presentation is adapted; all state,

@@ -1,4 +1,4 @@
-"""SnowRunner v0.31.14: coordinate-safe workspace and approved-UI preview.
+"""SnowRunner v0.31.15: coordinate-safe workspace and approved-UI preview.
 
 No changes to save files, cargo numbers, recipe imports or OTA behavior.
 The original canvas buttons and item callbacks remain in use.
@@ -133,7 +133,7 @@ def install_workspace_fix(cls):
         _place_search_widgets(self)
         return result
     cls.redraw=repaint
-    # v0.31.14: merge consecutive wheel ticks into a single Canvas redraw.
+    # v0.31.15: merge consecutive wheel ticks into a single Canvas redraw.
     from scroll_performance_v313 import install_scroll_performance
     install_scroll_performance(cls)
     _INSTALLED=True

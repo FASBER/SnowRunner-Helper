@@ -31,7 +31,7 @@ class WindowsFrozenRuntimeChecks(unittest.TestCase):
 
     def test_release_version_unchanged_app_id(self):
         version=json.loads((ROOT/'version.json').read_text(encoding='utf-8'))['version']
-        self.assertEqual(version,'0.31.14')
+        self.assertEqual(version,'0.31.15')
         iss=(ROOT/'setup_snowrunner.iss').read_text(encoding='utf-8')
         self.assertIn('AppId=SnowRunnerCraftAssistant.CommunityEdition',iss)
         self.assertIn(f'SnowRunnerHelper_Setup_v{version}',iss)
