@@ -10,7 +10,7 @@ _ROOT = Path(__file__).resolve().parent
 try:
     CURRENT_VERSION = json.loads((_ROOT / 'version.json').read_text(encoding='utf-8'))['version']
 except (OSError, ValueError, KeyError, TypeError):
-    CURRENT_VERSION = '0.31.4'
+    CURRENT_VERSION = '0.31.5'
 
 # Verified public GitHub repository. No GitHub token is bundled.
 # For production OTA you MUST set the matching Ed25519 public key below.
