@@ -1,4 +1,4 @@
-"""Approved SnowRunner reference screen adapter (v0.31.11).
+"""Approved SnowRunner reference screen adapter (v0.31.12).
 
 The original GameScreen's working recipe/calculator/settings logic stays intact.
 Only its approved Expedition Cargo canvas presentation is adapted; all state,
@@ -110,20 +110,21 @@ def _draw_nav(self):
 def _nav_icon(self,page,x,y,selected):
     """Actual icon artwork cropped from the approved reference, not substitutes."""
     from core import ROOT
-    path=ROOT/'assets'/'ui'/'approved_nav'/f'{page}.png'
+    custom=getattr(self,'appearance',{}).get('nav_icons',{}).get(page,'')
+    path=Path(custom) if custom and Path(custom).is_file() else ROOT/'assets'/'ui'/'approved_nav'/f'{page}.png'
     if not path.is_file():return
     try:
         cache=getattr(self,'_approved_nav_cache',None)
         if cache is None:cache=self._approved_nav_cache={}
-        key=(page,selected,max(1,int(self.s(44))))
+        key=(page,str(path),selected,max(1,int(self.s(44))))
         if key not in cache:
             with Image.open(path) as source:
                 img=source.convert('RGBA')
-            if selected:
+            if selected and not custom:
                 alpha=img.getchannel('A')
                 img=Image.new('RGBA',img.size,(255,194,27,0))
                 img.putalpha(alpha)
-            dim=key[2]
+            dim=key[3]
             img.thumbnail((dim,dim),Image.Resampling.LANCZOS)
             cache[key]=ImageTk.PhotoImage(img,master=self.root)
         if hasattr(self,'refs'):self.refs.append(cache[key])
@@ -355,11 +356,23 @@ def _draw_detail(self):
     self.txt(967,331,'Используется в:' if ru else 'Used in:',16,FG,True)
     related=_related_recipes(self,cid)
     if related:
+        # Distinguish regionally different recipes sharing the same name;
+        # never show identical-looking bullet points with no context.
+        from core import display_recipe_location
+        titles=[text_value(r.get('name'),self.lang) or '—' for r in related]
+        duplicates={title for title in titles if titles.count(title)>1}
         for i,r in enumerate(related[:3]):
-            y=368+i*30
+            y=361+i*29
+            name=titles[i]
+            if name in duplicates:
+                location=display_recipe_location(r,self.lang)
+                if location and location not in ('Регион не указан','Region not specified'):
+                    name+=' — '+location
             self.txt(965,y,'•',22,YELLOW)
-            self.txt(984,y,text_value(r.get('name'),self.lang) or '—',12,FG,limit=282)
-            self.hit(964,y-13,1283,y+14,lambda rec=r:self.open_recipe(rec),('btn','recipe'))
+            self.txt(984,y,name,11,FG,limit=290)
+            self.hit(964,y-13,1283,y+13,lambda rec=r:self.open_recipe(rec),('btn','recipe'))
+        if len(related)>3:
+            self.txt(1218,430,('+'+str(len(related)-3)),10,YELLOW,anchor='e')
     else:
         self.txt(954,383,'Нет подтверждённых рецептов' if ru else 'No verified recipes',12,MUTED)
     self.line(929,434,1281,434,'#40565C')
@@ -456,33 +469,68 @@ def _popup(self):
 
 
 def _draw_extra(self,page):
+    """Approved-look home and garage dashboards; no example save data."""
     from game_ui import FG,MUTED,YELLOW
     ru=self.lang=='ru'
-    head=('ГЛАВНАЯ' if page=='home' else 'ГАРАЖ') if ru else ('HOME' if page=='home' else 'GARAGE')
+    name=('ГЛАВНАЯ' if page=='home' else 'ГАРАЖ') if ru else ('HOME' if page=='home' else 'GARAGE')
     self.round(197,177,1295,709,8,'#0A202A','#375764')
-    self.txt(219,207,head,28,FG,True)
-    self.line(218,226,1270,226,'#36515B')
+    self.txt(219,205,name,27,FG,True)
+    self.line(219,223,1273,223,'#36515B')
     data=_stats(self)
+    local=self.app.active_profile_key=='local'
+    # Profile banner: this is an actual selected save name, not a mocked user.
+    self.round(220,243,1271,296,8,'#12313D','#365965')
+    self.txt(237,268,('АКТИВНЫЙ ПРОФИЛЬ' if ru else 'ACTIVE PROFILE'),12,MUTED,True)
+    self.txt(475,268,data['profile'],16,FG,True,limit=545)
+    self.txt(1250,268,('НЕ ПОДКЛЮЧЁН' if local else 'ПОДКЛЮЧЁН') if ru else
+             ('NOT CONNECTED' if local else 'CONNECTED'),11,'#E9BA56' if local else '#90D8BA',True,anchor='e')
     if page=='home':
-        self.txt(234,278,'ПРОФИЛЬ И ЭКСПЕДИЦИЯ' if ru else 'PROFILE AND EXPEDITION',19,YELLOW,True)
-        for i,(key,ru_name,en_name) in enumerate([
-                ('profile','Выбранный профиль','Selected profile'),('money','Баланс','Money'),
-                ('exp','Опыт','Experience'),('objectives','Выполненные задания','Completed tasks')]):
-            y=332+i*76
-            self.round(233,y,965,y+59,8,'#122E39','#365764')
-            self.txt(255,y+29,ru_name if ru else en_name,15,FG)
-            self.txt(933,y+29,(data[key] if key=='profile' else _number(data[key])),18,YELLOW,True,anchor='e',limit=350)
-        self.round(1018,340,1257,388,7,'#513D19','#FFC21B')
-        self.txt(1138,365,'⟳  ОБНОВИТЬ' if ru else '⟳  REFRESH',13,FG,True,anchor='center')
-        self.hit(1018,339,1259,390,self.app.refresh_game_data,('btn','refresh'))
+        values=(('money','БАЛАНС','BALANCE','₵'),('exp','ОПЫТ','EXPERIENCE','★'),
+                ('objectives','ВЫПОЛНЕНО ЗАДАНИЙ','COMPLETED TASKS','✓'),
+                ('trucks','МАШИН В ХРАНИЛИЩЕ','STORED TRUCKS','▣'))
+        for i,(key,r,en,symbol) in enumerate(values):
+            col=i%2;row=i//2;x=221+col*524;y=318+row*114
+            self.round(x,y,x+505,y+98,9,'#132D38','#385763')
+            self.round(x+11,y+13,x+52,y+52,7,'#263F46','#48636B')
+            self.txt(x+31,y+32,symbol,24,YELLOW,True,anchor='center')
+            self.txt(x+65,y+28,r if ru else en,12,MUTED,True,limit=420)
+            self.txt(x+65,y+66,_number(data[key]),20,FG,True)
+        self.txt(239,569,'БЫСТРЫЕ ДЕЙСТВИЯ' if ru else 'QUICK ACTIONS',15,YELLOW,True)
+        actions=[('ГРУЗЫ','CARGO','cargo'),('КРАФТ','CRAFT','recipes'),('КАЛЬКУЛЯТОР','CALCULATOR','calculator')]
+        for i,(r,en,target) in enumerate(actions):
+            x=221+i*349
+            self.round(x,605,x+329,652,7,'#183947','#456571')
+            self.txt(x+164,629,r if ru else en,14,FG,True,anchor='center')
+            self.hit(x,605,x+329,653,lambda target=target:_action(self,target),('btn','go_'+target))
+        self.txt(224,682,'Обновление считывает только выбранное сохранение.' if ru else
+                 'Refresh only reads the explicitly selected save.',11,MUTED)
     else:
-        self.txt(235,278,'ГАРАЖ И ТЕХНИКА' if ru else 'GARAGES AND VEHICLES',19,YELLOW,True)
-        self.txt(242,349,('Машин в хранилище: ' if ru else 'Retained trucks: ')+_number(data['trucks']),17,FG)
-        self.txt(242,413,('Открытых гаражей: ' if ru else 'Open garages: ')+_number(data['garages']),17,FG)
-        self.txt(242,507,'Данные берутся только из выбранного сохранения.' if ru else 'Only selected save data is used.',14,MUTED)
-        self.round(242,555,765,605,7,'#173845','#56707A')
-        self.txt(503,581,'ПОДКЛЮЧИТЬ СОХРАНЕНИЕ' if ru else 'CONNECT GAME SAVE',13,FG,True,anchor='center')
-        self.hit(241,555,766,606,self.app.game_connection_dialog,('btn','profile'))
+        fleet=[('trucks','МАШИН В ХРАНИЛИЩЕ','STORED VEHICLES'),('garages','ОТКРЫТО ГАРАЖЕЙ','OPEN GARAGES')]
+        for i,(key,r,en) in enumerate(fleet):
+            x=221+i*524
+            self.round(x,316,x+505,420,8,'#15303D','#3A5D68')
+            self.txt(x+21,343,r if ru else en,14,MUTED,True)
+            self.txt(x+21,390,_number(data[key]),27,YELLOW,True)
+        self.round(221,438,1270,637,9,'#102A35','#345664')
+        self.txt(243,467,'ТЕХНИКА ПО МОДЕЛЯМ' if ru else 'VEHICLES BY MODEL',17,FG,True)
+        models={}
+        if not local:
+            try:
+                snapshot=(self.app.profiles.read(self.app.active_profile_key).get('game_snapshot') or {})
+                models=(snapshot.get('retained_trucks') or {}).get('models') or {}
+                if not isinstance(models,dict):models={}
+            except (OSError,ValueError,TypeError,KeyError,AttributeError):models={}
+        if models:
+            for i,(model,count) in enumerate(sorted(models.items())[:4]):
+                y=504+i*30
+                self.txt(254,y,model,12,FG,limit=840)
+                self.txt(1171,y,str(count),13,YELLOW,True,anchor='e')
+        else:
+            self.txt(253,531,'Нет подтверждённых данных о машинах.' if ru else
+                     'No verified vehicle data.',14,MUTED)
+        self.round(873,651,1267,696,7,'#183B48','#5A7985')
+        self.txt(1070,674,'ПОДКЛЮЧИТЬ СОХРАНЕНИЕ' if ru else 'CONNECT GAME SAVE',12,FG,True,anchor='center')
+        self.hit(873,651,1267,697,self.app.game_connection_dialog,('btn','connect_save'))
 
 
 def _redraw(self):
@@ -523,4 +571,7 @@ def install_approved_ui():
     cls._draw_reference_popup=_popup
     cls.redraw=_redraw
     cls._approved_ui_v311=True
+    from ui_repair_v312 import install_workspace_fix, install_editor_preview
+    install_workspace_fix(cls)
+    install_editor_preview()
     _INSTALLED=True
