@@ -64,7 +64,9 @@ try {{
     if ($actualSha256 -ne $expectedSha256) {{
         throw 'Downloaded installer SHA-256 changed after application exit.'
     }}
-    Start-Process -FilePath $installerPath -WorkingDirectory $installerInfo.DirectoryName -ErrorAction Stop
+    # Explicitly mark OTA runs for new installers; legacy v0.31.5 is detected
+    # by the setup source directory in the Inno Setup code.
+    Start-Process -FilePath $installerPath -WorkingDirectory $installerInfo.DirectoryName -ArgumentList '/OTA=1' -ErrorAction Stop
     exit 0
 }} catch {{
     try {{
