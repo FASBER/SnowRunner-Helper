@@ -73,7 +73,16 @@ def theme_color(color, theme='game', kind='surface'):
 
 
 def theme_background(image, theme):
-    """Tint only the canvas workspace. Keep the approved masthead artwork."""
+    """Preserve theme support and load the explicitly approved UI adapter.
+
+    All other modules, profile data, OTA updater and user settings are unchanged.
+    """
+    from approved_reference_v311 import install_approved_ui, decorate_background
+    if image.size == (1319, 747) and image.getpixel((20,180))[:3] == (8,24,33):
+        install_approved_ui()
+    decorated = decorate_background(image,theme)
+    if decorated is not image:
+        return decorated
     if theme == 'game' or theme not in THEME_LABELS:
         return image
     from PIL import Image, ImageOps

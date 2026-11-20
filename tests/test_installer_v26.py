@@ -37,6 +37,6 @@ class InstallerChecks(unittest.TestCase):
         builder=(ROOT/'build_installer_windows.bat').read_text(encoding='utf-8')
         self.assertIn('call build_windows.bat', builder)
         self.assertIn('setup_snowrunner.iss',builder)
-        self.assertIn('installer_build\\SnowRunnerHelper_Setup_v0.31.10.exe', builder)
+        self.assertIn('installer_build\\SnowRunnerHelper_Setup_v0.31.11.exe', builder)
 
 if __name__=='__main__': unittest.main()

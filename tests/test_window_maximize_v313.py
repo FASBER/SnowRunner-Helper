@@ -16,7 +16,7 @@ class WindowMaximizeChecks(unittest.TestCase):
 
     def test_version(self):
         import json
-        self.assertEqual(json.loads((ROOT/"version.json").read_text(encoding="utf-8"))["version"],"0.31.10")
+        self.assertEqual(json.loads((ROOT/"version.json").read_text(encoding="utf-8"))["version"],"0.31.11")
 
 if __name__=="__main__":
     unittest.main()
