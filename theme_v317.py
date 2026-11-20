@@ -78,6 +78,9 @@ def theme_background(image, theme):
     All other modules, profile data, OTA updater and user settings are unchanged.
     """
     from approved_reference_v311 import install_approved_ui, decorate_background
+    # Install the explicit save-slot selection dialog, including its Save action.
+    from profile_selector_v314 import install_profile_selector
+    install_profile_selector()
     if image.size == (1319, 747) and image.getpixel((20,180))[:3] == (8,24,33):
         install_approved_ui()
     decorated = decorate_background(image,theme)
