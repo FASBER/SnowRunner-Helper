@@ -1,4 +1,4 @@
-"""Visual-layout and interaction regressions for approved v0.31.12 UI.
+"""Visual-layout and interaction regressions for approved v0.31.13 UI.
 
 Headless: checks the real coordinate transform and compatibility without
 changing game save files or creating a GUI window on GitHub Actions.
