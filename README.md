@@ -1,4 +1,4 @@
-# SnowRunner Helper — текущие исходники v0.31.2
+# SnowRunner Helper — текущие исходники v0.31.3
 
 **Автосборка GitHub Actions:** инструкция — [`GITHUB_ACTIONS_SETUP_RU.md`](GITHUB_ACTIONS_SETUP_RU.md). Репозиторий публикации: `FASBER/SnowRunner-Helper`.
 

@@ -130,6 +130,7 @@ class GameScreen:
         self._geometry_save_job=None
         self.root.bind('<Configure>',self._remember_geometry)
         self.canvas.bind('<Button-1>', self.onclick)
+        self.canvas.bind('<Double-Button-1>', self.on_double_click_header)
         self.canvas.bind('<Motion>', self.onmove)
         self.canvas.bind('<Leave>', lambda e: self.onleave())
         # Bind at toplevel so wheel works even while the search Entry has focus.
@@ -145,6 +146,7 @@ class GameScreen:
         self.root.bind('<Control-0>',lambda e:self.set_zoom(100))
         self.canvas.bind('<KeyPress>', self.onkey)
         self.root.bind('<Escape>', self.escape)
+        self.root.bind('<F11>', lambda event: self.toggle_maximize())
         self.root.bind('<Alt-Left>',lambda e:self.go_back())
         self.canvas.bind('<ButtonPress-1>',self._press_window,add='+')
         self.canvas.bind('<B1-Motion>',self._move_window,add='+')
@@ -198,6 +200,7 @@ class GameScreen:
         self._geometry_save_job=None
         try:
             if not self.root.winfo_exists():return
+            if self.maximized:return  # Never overwrite restored size with maximized geometry.
             width,height=self.root.winfo_width(),self.root.winfo_height()
             if width<1040 or height<640:return
             self.app.config['window_geometry']=self.root.geometry()
@@ -601,6 +604,11 @@ class GameScreen:
         pos=self.local(e.x,e.y)
         if not pos:return
         x,y=pos
+        # Process the title-bar maximize control before decorative/overlapping
+        # canvas hit areas. This button must always change actual OS geometry.
+        if (1231 <= x <= 1268 and 0 <= y <= 45) if getattr(self, 'reference_ui', False) else (1218 <= x <= 1256 and 21 <= y <= 60):
+            self.toggle_maximize()
+            return
         for a,b,c,d,fn,tag in reversed(self.hitboxes):
             if a<=x<=c and b<=y<=d:
                 fn()
@@ -1005,15 +1013,42 @@ class GameScreen:
             self.txt((x1+x2)/2,41,txt,18,FG,anchor='center')
             self.hit(x1,21,x2,60,action,('btn',tag))
 
+    def _usable_screen_area(self):
+        """Windows work area excludes taskbar; other platforms use screen bounds."""
+        if os.name == 'nt':
+            try:
+                import ctypes
+                from ctypes import wintypes
+                rect = wintypes.RECT()
+                if ctypes.windll.user32.SystemParametersInfoW(0x0030, 0, ctypes.byref(rect), 0):
+                    if rect.right > rect.left and rect.bottom > rect.top:
+                        return rect.left, rect.top, rect.right, rect.bottom
+            except (AttributeError, OSError, ValueError):
+                pass
+        return 0, 0, self.root.winfo_screenwidth(), self.root.winfo_screenheight()
+
     def toggle_maximize(self):
+        """Switch between full usable desktop and the original window size."""
+        self._window_drag = None
+        self._window_resize = None
         if not self.maximized:
-            self.restore_geometry=self.root.geometry()
-            self.maximized=True
-            self.root.geometry(f'{self.root.winfo_screenwidth()}x{self.root.winfo_screenheight()}+0+0')
+            # Preserve window size and position before maximizing.
+            self.restore_geometry = self.root.geometry()
+            left, top, right, bottom = self._usable_screen_area()
+            self.maximized = True
+            self.root.geometry(f'{right-left}x{bottom-top}{left:+d}{top:+d}')
         else:
-            self.maximized=False
-            self.root.geometry(getattr(self,'restore_geometry','1319x747+80+80'))
+            self.maximized = False
+            self.root.geometry(getattr(self, 'restore_geometry', '1319x747+80+80'))
+            self.root.after(250, self._save_geometry)
         self.redraw()
+
+    def on_double_click_header(self, event):
+        """Standard title-bar double-click action, restricted to empty header area."""
+        point = self.local(event.x, event.y)
+        if point and 280 <= point[0] <= 855 and 0 <= point[1] <= 85:
+            self.toggle_maximize()
+            return 'break'
 
     def nav_image(self,page,x,y,width,height,chosen=False):
         override=self.appearance.get('nav_icons',{}).get(page,'')
