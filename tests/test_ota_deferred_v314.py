@@ -12,15 +12,15 @@ from update_security import Release, UpdateSecurityError
 
 class DeferredOTATests(unittest.TestCase):
     def release(self, data):
-        return Release(version='0.31.9', channel='stable',
-                       url='https://github.com/FASBER/SnowRunner-Helper/releases/download/v0.31.9/SnowRunnerHelper_Setup_v0.31.9.exe',
+        return Release(version='0.31.10', channel='stable',
+                       url='https://github.com/FASBER/SnowRunner-Helper/releases/download/v0.31.10/SnowRunnerHelper_Setup_v0.31.10.exe',
                        sha256=hashlib.sha256(data).hexdigest(), size=len(data),
                        notes='Deferred OTA installer')
 
     def test_wait_for_old_exe_and_reverify_hash_before_installation(self):
         with tempfile.TemporaryDirectory() as directory:
             data=b'legitimate test installer content'
-            setup=Path(directory)/'SnowRunnerHelper_Setup_v0.31.9.exe'
+            setup=Path(directory)/'SnowRunnerHelper_Setup_v0.31.10.exe'
             setup.write_bytes(data)
             calls=[]
             release=self.release(data)
@@ -50,7 +50,7 @@ class DeferredOTATests(unittest.TestCase):
     def test_tampered_installer_never_starts(self):
         with tempfile.TemporaryDirectory() as directory:
             data=b'legitimate test installer content'
-            setup=Path(directory)/'SnowRunnerHelper_Setup_v0.31.9.exe'
+            setup=Path(directory)/'SnowRunnerHelper_Setup_v0.31.10.exe'
             setup.write_bytes(data+b'tampering')
             calls=[]
             with self.assertRaises(UpdateSecurityError):
@@ -70,7 +70,7 @@ class DeferredOTATests(unittest.TestCase):
     def test_reject_non_windows_and_invalid_pid(self):
         with tempfile.TemporaryDirectory() as directory:
             data=b'x'
-            setup=Path(directory)/'SnowRunnerHelper_Setup_v0.31.9.exe'
+            setup=Path(directory)/'SnowRunnerHelper_Setup_v0.31.10.exe'
             setup.write_bytes(data)
             rel=self.release(data)
             with self.assertRaises(UpdateLaunchError):
