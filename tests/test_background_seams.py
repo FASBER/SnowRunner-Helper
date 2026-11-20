@@ -16,10 +16,12 @@ class BackgroundContinuityTests(unittest.TestCase):
         values['textures']=False
         values['mud']=False
         values['header_image']=custom_header
-        game=SimpleNamespace(appearance=normalize(values),bg_cache={'old':None})
+        # The real GameScreen always owns an Application. Supply that minimal
+        # dependency in headless tests as well (introduced in v0.31.7).
+        app=SimpleNamespace(config={'theme':'game'})
+        game=SimpleNamespace(appearance=normalize(values),bg_cache={'old':None},app=app)
         old=game_ui.PANEL
         try:
-            # The actual application computes the same panel palette first.
             game_ui.GameScreen._apply_palette(game)
             game_ui.GameScreen._build_background(game)
             return game.base_image,ImageColor.getrgb(game_ui.PANEL)
@@ -71,7 +73,8 @@ class BackgroundContinuityTests(unittest.TestCase):
     def test_legacy_track_and_mud_preferences_cannot_recreate_footer_cut(self):
         values=preset_config('snow')
         values.update({'textures':False, 'tracks':True, 'mud':True})
-        game=SimpleNamespace(appearance=normalize(values), bg_cache={})
+        app=SimpleNamespace(config={'theme':'game'})
+        game=SimpleNamespace(appearance=normalize(values), bg_cache={}, app=app)
         old=game_ui.PANEL
         try:
             game_ui.GameScreen._apply_palette(game)
