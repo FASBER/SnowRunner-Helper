@@ -27,7 +27,9 @@ def decorate_background(image, theme='game'):
     if image.size != (1319, 747) or image.getpixel((20,180))[:3] != (8,24,33):
         return image
     from core import ROOT
-    path = ROOT / 'assets' / 'ui' / 'approved_reference_v311.png'
+    path = ROOT / 'assets' / 'ui' / 'approved_reference_v316.png'
+    if not path.is_file():
+        path = ROOT / 'assets' / 'ui' / 'approved_reference_v311.png'
     if not path.is_file():
         return image
     try:
@@ -574,4 +576,8 @@ def install_approved_ui():
     from ui_repair_v312 import install_workspace_fix, install_editor_preview
     install_workspace_fix(cls)
     install_editor_preview()
+    from expedition_upgrade_v316 import install_expedition_upgrade
+    install_expedition_upgrade(cls)
+    from hotkey_upgrade_v316 import install_hotkey_improvement
+    install_hotkey_improvement()
     _INSTALLED=True
